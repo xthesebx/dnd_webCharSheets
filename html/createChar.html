@@ -49,30 +49,30 @@
         </tr>
             <tr>
                 <td><table><tr><td><table><tbody><tr><td><table><tbody><tr><td><table><tbody>
-                <tr><td class="tablerow" style="text-align: center">Stärke<br><input type="number" name="str" class="str numberfield inputfield"><br><div class="stats" >$STRM</div></td></tr>
+                <tr><td class="tablerow" style="text-align: center"><span style="font-size: 13px">Stärke</span><br><input type="number" name="str" class="str numberfield inputfield"><br><div class="stats" >$STRM</div></td></tr>
                 <tr>
                     <td class="tablerow" style="text-align: center">
-                        Geschicklichkeit<br><input type="number" name="ges" class="ges numberfield inputfield"><br><div  class="stats">$GESM</div>
+                        <span style="font-size: 13px">Geschicklichkeit</span><br><input type="number" name="ges" class="ges numberfield inputfield"><br><div  class="stats">$GESM</div>
                     </td>
                 </tr>
                 <tr>
                     <td class="tablerow" style="text-align: center">
-                        Konstitution<br><input type="number" name="kon" class="kon numberfield inputfield"><br><div  class="stats">$KONM</div>
+                        <span style="font-size: 13px">Konstitution</span><br><input type="number" name="kon" class="kon numberfield inputfield"><br><div  class="stats">$KONM</div>
                     </td>
                 </tr>
                 <tr>
                     <td class="tablerow" style="text-align: center">
-                        Intelligenz<br><input type="number" name="intelligenz" class="intelligenz numberfield inputfield"><br><div  class="stats">$INTM</div>
+                        <span style="font-size: 13px">Intelligenz</span><br><input type="number" name="intelligenz" class="intelligenz numberfield inputfield"><br><div  class="stats">$INTM</div>
                     </td>
                 </tr>
                 <tr>
                     <td class="tablerow" style="text-align: center">
-                        Weisheit<br><input type="number" name="weis" class="weis numberfield inputfield"><br><div  class="stats">$WEISM</div>
+                        <span style="font-size: 13px">Weisheit</span><br><input type="number" name="weis" class="weis numberfield inputfield"><br><div  class="stats">$WEISM</div>
                     </td>
                 </tr>
                 <tr>
                     <td class="tablerow" style="text-align: center">
-                        Charisma<br><input type="number" name="cha" class="cha numberfield inputfield"><br><div  class="stats">$CHAM</div>
+                        <span style="font-size: 13px">Charisma</span><br><input type="number" name="cha" class="cha numberfield inputfield"><br><div  class="stats">$CHAM</div>
                     </td>
                 </tr>
                 </table>
@@ -80,18 +80,20 @@
                     <td>
                         <table>
                             <tbody><tr>
-                                <td class="tablerow" style="text-align: center"><input type="number" name="inspiration" class="inspiration numberfield inputfield"></td><td class="tablerow" style="text-align: center"> Inspiration</td>
-                            </tr>
-                            <tr><td class="tablerow" style="text-align: center"><input type="number" name="übungsbonus" class="übungsbonus numberfield inputfield"></td><td class="tablerow" style="text-align: center">Übungsbonus</td></tr>
+                                <td><table><tr>
+                                    <td class="tablerow" style="text-align: center"><input type="number" name="inspiration" class="inspiration numberfield inputfield"></td><td class="tablerow" style="text-align: center"> Inspiration</td>
+                                </tr>
+                                    <tr><td class="tablerow" style="text-align: center"><input type="number" name="übungsbonus" class="übungsbonus numberfield inputfield"></td><td class="tablerow" style="text-align: center">Übungsbonus</td>
+                                </tr></table></td></tr>
                             <tr><td>
-                                <table class="tablerow">
+                                <table class="tablerow" style="width: 100%">
                                     <tbody><tr><td><input type="checkbox" name="strretü" class="strretü inputfield"><span class="stats">$STRRET</span>Stärke</td></tr>
                                     <tr><td style="display: flex"><input type="checkbox" name="gesretü" class="gesretü inputfield"><span  class="stats">$GESRET</span>Geschicklichkeit</td></tr>
                                     <tr><td><input type="checkbox" name="konretü" class="konretü inputfield"><span class="stats">$KONRET</span>Konstitution</td></tr>
                                     <tr><td><input type="checkbox" name="intretü" class="intretü inputfield"><span class="stats">$INTRET</span>Intelligenz</td></tr>
                                     <tr><td><input type="checkbox" name="weisretü" class="weisretü inputfield"><span class="stats" >$WEISRET</span>Weisheit</td></tr>
                                     <tr><td><input type="checkbox" name="charetü" class="charetü inputfield"><span class="stats" >$CHARET</span>Charisma</td></tr>
-                                    <tr><td style="text-align: center">Rettungswürfe</td></tr>
+                                    <tr><td style="text-align: center; font-size: 13px">Rettungswürfe</td></tr>
                                     </tbody></table>
                             </td>
                             </tr>
@@ -114,13 +116,14 @@
                                 <tr><td><input type="checkbox" name="überzeugenü" class="überzeugenü inputfield"><span  class="stats">$ÜBERZEUGEN</span>Überzeugen</td></tr>
                                 <tr><td><input type="checkbox" name="wahrnehmungü" class="wahrnehmungü inputfield"><span  class="stats">$WAHRNEHMUNG</span>Wahrnehmung</td></tr>
                                 <tr><td><input type="checkbox" name="überlebenü" class="überlebenü inputfield"><span  class="stats">$ÜBERLEBEN</span>Überleben</td></tr>
+                                <tr><td style="text-align: center; font-size: 13px">Fertigkeiten</td></tr>
                                 </tbody></table></td></tr>
                             </tbody></table>
                     </td></tr>
                 </tbody></table>
                 </td>
                 </tr>
-                <tr><td><table>
+                <tr><td><table style="width: 100%">
                     <tr><td class="tablerow" style="text-align: center"><span  class="stats">$PASSIVE</span></td><td class="tablerow" style="text-align: center"> Passive Wahrnehmung</td></tr>
                 </table></td></tr>
                 <tr><td class="tablerow">
@@ -128,7 +131,7 @@
                     <div  style="text-align: center">Weitere Übungen und Sprachen</div>
                 </td></tr>
                 </tbody></table></td>
-                    <td><table><tbody><tr><td><table><tbody><tr>
+                    <td><table><tbody><tr><td><table style="width: 100%"><tbody><tr>
                         <td class="tablerow" style="text-align: center"><input class="rüstungsklasse inputfield numberfield" name="rüstungsklasse" type="number"></input><br/>Rüstungsklasse</td>
                         <td class="tablerow" style="text-align: center"><input name="initiative" class="initiative inputfield numberfield" type="number"><br/>Initiative</td>
                         <td class="tablerow" style="text-align: center"><input name="bewegung" class="bewegung inputfield numberfield" type="number"><br/>Bewegungsrate</td></tr></tbody></table>
@@ -137,7 +140,7 @@
                     <tr><td class="tablerow">Trefferpunkte Maximum: <input name="maxhp" type="number" class="maxhp inputfield numberfield"><br>
                         <input name="hp" type="number" class="temphp inputfield numberfield"><br><div style="text-align: center">Aktuelle Trefferpunkte</div></td></tr>
                     <tr><td class="tablerow"><input name="temphp" type="number" class="temphp inputfield numberfield"><br/><div style="text-align: center">Temporäre Trefferpunkte</div></td></tr>
-                    <tr><td><table><tbody><tr><td class="tablerow">Gesamt: <input type="text" name="trefferwürfelmax" class="trefferwürfelmax inputfield"><br>
+                    <tr><td><table><tbody><tr><td class="tablerow" style="width: 50%">Gesamt: <input type="text" name="trefferwürfelmax" class="trefferwürfelmax inputfield"><br>
                         <input type="text" name="trefferwürfel" class="trefferwürfel inputfield"><br><div style="text-align: center">Trefferwürfel</div></td>
                         <td class="tablerow">Erfolge <input type="checkbox" disabled><input type="checkbox" disabled><input type="checkbox" disabled><br>
                             Fehlschläge <input type="checkbox" disabled><input type="checkbox" disabled><input type="checkbox" disabled><br><div style="text-align: center">Todesrettungswürfe</div></td></tr></tbody></table>

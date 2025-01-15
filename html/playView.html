@@ -41,7 +41,7 @@
                                                             Gesinnung: $ALIGNMENT
                                                         </td>
                                                         <td>
-                                                            Exp: $EXP
+                                                            Exp: <input name="exp" class="exp inputfield numberfield" type="number">
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -271,7 +271,7 @@
                                     </table>
                                 </td>
                                 <td>
-                                    <table>
+                                    <table style="height: 100%">
                                         <tbody>
                                         <tr>
                                             <td>
@@ -291,12 +291,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="tablerow">Trefferpunkte Maximum $MAXHP<br>$HP<br>
+                                            <td class="tablerow">Trefferpunkte Maximum $MAXHP<br>
+                                                <input name="hp" type="number" class="temphp inputfield numberfield"><br>
                                                 <div style="text-align: center">Aktuelle Trefferpunkte</div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="tablerow">$TEMPHP<br/>
+                                            <td class="tablerow"><input name="temphp" type="number" class="temphp inputfield numberfield"><br/>
                                                 <div style="text-align: center">Temporäre Trefferpunkte</div>
                                             </td>
                                         </tr>
@@ -305,11 +306,16 @@
                                                 <table style="width: 100%">
                                                     <tbody style="width: 100%">
                                                     <tr style="width: 100%">
-                                                        <td style="width: 50%" class="tablerow">Gesamt: $TREFFERWÜRFELMAX<br>$TREFFERWÜRFEL<br>
+                                                        <td style="width: 50%" class="tablerow">Gesamt: $TREFFERWÜRFELMAX<br>
+                                                            <input type="text" name="trefferwürfel" class="trefferwürfel inputfield"><br>
                                                             <div style="text-align: center">Trefferwürfel</div>
                                                         </td>
-                                                        <td style="width: 50%" class="tablerow">Erfolge [$DEATHSAVESUC]<br>
-                                                            Fehlschläge [$DEATHSAVEFAIL]<br>
+                                                        <td class="tablerow" style="width: 100%; font-size: 13px">Erfolge <input type="checkbox">
+                                                            <input type="checkbox">
+                                                            <input type="checkbox"><br>
+                                                            Fehlschläge <input type="checkbox">
+                                                            <input type="checkbox">
+                                                            <input type="checkbox"><br>
                                                             <div style="text-align: center">Todesrettungswürfe</div>
                                                         </td>
                                                     </tr>
@@ -331,26 +337,34 @@
                                                 </table>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr style="height: 100%">
                                             <td class="tablerow">
                                                 <table style="width: 100%">
-                                                    <tr>
-                                                        <td>$INVENTORY</td>
+                                                    <tr style="height: 100%">
+                                                        <td><input type="text" name="inventory"
+                                                                   class="inventory inputfield" style="display: inline-block; overflow: auto"></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>KM: $KUPFERMÜNZEN</td>
+                                                    <tr><td><table><tr>
+                                                        <td>KM: </td>
+                                                        <td><input type="number" class="kupfermünzen inputfield numberfield" name="kupfermünzen"></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>SM: $SILBERMÜNZEN</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>EM: $ELEKTRUMMÜNZEN</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>GM: $GOLDMÜNZEN</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>PM: $PLATINMÜNZEN</td>
+                                                        <tr>
+                                                            <td>SM: </td>
+                                                            <td><input type="number" class="silbermünzen inputfield numberfield" name="silbermünzen"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>EM: </td>
+                                                            <td><input type="number" class="elektrummünzen inputfield numberfield" name="elektrummünzen"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>GM: </td>
+                                                            <td><input type="number" class="goldmünzen inputfield numberfield" name="goldmünzen"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>PM: </td>
+                                                            <td><input type="number" class="platinmünzen inputfield numberfield" name="platinmünzen"></td>
+                                                    </tr></table></td>
+
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">Inventory</td>
@@ -448,11 +462,11 @@
                                                             </table>
                                                         </td>
                                                     </tr>
-                                                <tr>
-                                                    <td style="width: 100%">
-                                                        <table style="width: 100%">
-                                                            <tr style="width: 100%">
-                                                                $SPELLLIST0
+                                                    <tr>
+                                                        <td style="width: 100%">
+                                                            <table style="width: 100%">
+                                                                <tr style="width: 100%">
+                                                                    $SPELLLIST0
                                                             </table>
                                                         </td>
                                                     </tr>
@@ -468,7 +482,7 @@
                                                                 <tr style="width: 100%">
                                                                     <td class="tablerow">1</td>
                                                                     <td class="tablerow">$SPELL1COUNT</td>
-                                                                    <td class="tablerow">$SPELL1USED</td>
+                                                                    <td class="tablerow" style="width: 33%"><input type="number" class="spell1used inputfield numberfield" name="spell1used"></td>
                                                                 </tr>
                                                             </table>
                                                         </td>
@@ -493,7 +507,7 @@
                                                                 <tr style="width: 100%">
                                                                     <td class="tablerow">2</td>
                                                                     <td class="tablerow">$SPELL2COUNT</td>
-                                                                    <td class="tablerow">$SPELL2USED</td>
+                                                                    <td class="tablerow" style="width: 33%"><input type="number" class="spell2used inputfield numberfield" name="spell2used"></td>
                                                                 </tr>
                                                             </table>
                                                         </td>
@@ -518,7 +532,7 @@
                                                     <tr style="width: 100%">
                                                         <td class="tablerow">3</td>
                                                         <td class="tablerow">$SPELL3COUNT</td>
-                                                        <td class="tablerow">$SPELL3USED</td>
+                                                        <td class="tablerow" style="width: 33%"><input type="number" class="spell3used inputfield numberfield" name="spell3used"></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -536,7 +550,7 @@
                                                     <tr style="width: 100%">
                                                         <td class="tablerow">4</td>
                                                         <td class="tablerow">$SPELL4COUT</td>
-                                                        <td class="tablerow">$SPELL4USED</td>
+                                                        <td class="tablerow" style="width: 33%"><input type="number" class="spell4used inputfield numberfield" name="spell4used"></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -554,7 +568,7 @@
                                                     <tr style="width: 100%">
                                                         <td class="tablerow">5</td>
                                                         <td class="tablerow">$SPELL5COUNT</td>
-                                                        <td class="tablerow">$SPELL5USED</td>
+                                                        <td class="tablerow" style="width: 33%"><input type="number" class="spell5used inputfield numberfield" name="spell5used"></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -580,7 +594,7 @@
                                                     <tr style="width: 100%">
                                                         <td class="tablerow">6</td>
                                                         <td class="tablerow">$SPELL6COUNT</td>
-                                                        <td class="tablerow">$SPELL6USED</td>
+                                                        <td class="tablerow" style="width: 33%"><input type="number" class="spell6used inputfield numberfield" name="spell6used"></td>
                                                     </tr>
                                                 </table>
                                                 <table>$SPELLLIST6</table>
@@ -594,7 +608,7 @@
                                                     <tr style="width: 100%">
                                                         <td class="tablerow">7</td>
                                                         <td class="tablerow">$SPELL7COUNT</td>
-                                                        <td class="tablerow">$SPELL7USED</td>
+                                                        <td class="tablerow" style="width: 33%"><input type="number" class="spell7used inputfield numberfield" name="spell7used"></td>
                                                     </tr>
                                                 </table>
                                                 <table>$SPELLLIST7</table>
@@ -608,7 +622,7 @@
                                                     <tr style="width: 100%">
                                                         <td class="tablerow">8</td>
                                                         <td class="tablerow">$SPELL8COUNT</td>
-                                                        <td class="tablerow">$SPELL8USED</td>
+                                                        <td class="tablerow" style="width: 33%"><input type="number" class="spell8used inputfield numberfield" name="spell8used"></td>
                                                     </tr>
                                                 </table>
                                                 <table>$SPELLLIST8</table>
@@ -622,7 +636,7 @@
                                                     <tr style="width: 100%">
                                                         <td class="tablerow">9</td>
                                                         <td class="tablerow">$SPELL9COUNT</td>
-                                                        <td class="tablerow">$SPELL9USED</td>
+                                                        <td class="tablerow" style="width: 33%"><input type="number" class="spell9used inputfield numberfield" name="spell9used"></td>
                                                     </tr>
                                                 </table>
                                                 <table>$SPELLLIST9</table>
@@ -639,8 +653,7 @@
         </td>
     </tr>
 </table>
-<button onclick="window.location = '/'" class="scheme">back</button>
+<button onclick="window.location = '/charsheet/$ID'" class="scheme">back</button>
 <button onclick="window.location = '/edit/$ID'" class="scheme">edit</button>
-<button onclick="window.location = '/play/$ID'" class="scheme">playing</button>
 </body>
 </html>

@@ -30,6 +30,10 @@ td {
     color: #afcad5;
 }
 
+.tablefill {
+    width: 100%;
+}
+
 .stats {
     display: none;
 }

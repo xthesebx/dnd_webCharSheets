@@ -58,6 +58,5 @@ public class CharacterEdit extends JavalinAuthPage {
         }
         html = html.replace("<!-- SPELLOPTIONS -->", spellOptions.toString());
         ctx.html(html);
-
     }
 }
