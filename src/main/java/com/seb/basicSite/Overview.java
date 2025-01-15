@@ -20,7 +20,7 @@ public class Overview extends JavalinLoggedInPage {
         StringBuilder sb = new StringBuilder();
         while (rs.next()) {
             String id = rs.getString(2);
-            sb.append("<tr> <td class='tablerow' onclick=\\\"window.location='/charsheet/\").append(id).append(\"'\\\">").append(rs.getString(1))
+            sb.append("<tr> <td class='tablerow' onclick=\"window.location='/charsheet/").append(id).append("'\">").append(rs.getString(1))
                     .append("</td> <td class='tablerow' onclick=\"window.location='/charsheet/").append(id).append("'\">").append(id).append("</td><td class='tablerow' >")
                     .append("<button class='scheme' onclick=\"location='/delete/").append(id).append("'\">DELETE</button></td></tr>");
         }
