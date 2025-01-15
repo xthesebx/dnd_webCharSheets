@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="fix small issue with overview">
+    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="change some views, make armor class manually editable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/Overview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/Overview.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "JavaScript Debug.pdf.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -280,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736955912365</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="change some views, make armor class manually editable">
+      <option name="closed" value="true" />
+      <created>1736957656047</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1736957656047</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +331,7 @@
     <MESSAGE value="add auto login for local instance" />
     <MESSAGE value="fix 1 sql issue" />
     <MESSAGE value="fix small issue with overview" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix small issue with overview" />
+    <MESSAGE value="change some views, make armor class manually editable" />
+    <option name="LAST_COMMIT_MESSAGE" value="change some views, make armor class manually editable" />
   </component>
 </project>

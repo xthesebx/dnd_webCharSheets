@@ -58,6 +58,7 @@ public class Mysql {
             if (value.contains(";") || value.contains("'") || key.contains("'") || key.contains(";")) {return;}
             if (key.contains("submit")) return;
             if (value.get(0).isEmpty()) return;
+            if (key.equals("weapons") || key.equals("spells")) return;
             statement.append(", ").append(key);
             if (key.endsWith("ü")) {
                 values.append(", '").append(1).append("'");
@@ -68,6 +69,25 @@ public class Mysql {
         statement.append(values.toString()).append(");");
         Logger.error(statement.toString());
         con.prepareStatement(statement.toString()).executeUpdate();
+        ResultSet rs = con.prepareStatement("SELECT LAST_INSERT_ID();").executeQuery();
+        rs.next();
+        int id = rs.getInt(1);
+        if (stringListMap.get("weapons") != null)
+            stringListMap.get("weapons").forEach(value -> {
+                try {
+                    con.prepareStatement("INSERT INTO waffen_character (`waffe`, `character`) VALUES ('" + value + "', '" + id + "');").executeUpdate();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        if (stringListMap.get("spells") != null)
+            stringListMap.get("spells").forEach(value -> {
+                try {
+                    con.prepareStatement("INSERT INTO char_spells (`spell`, `character`) VALUES ('" + value + "', '" + id + "');").executeUpdate();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            });
     }
 
     public static ResultSet getCharacters(String user) throws SQLException {
