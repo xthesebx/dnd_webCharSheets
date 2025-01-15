@@ -1,0 +1,36 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+<table>
+    <tr>
+        <td class="tablerow">name</td><td class="tablerow">requirements</td><td class="tablerow">level</td>
+        <td class="tablerow">description</td>
+    </tr>
+    <!-- $EINTRÄGE -->
+    <tr>
+        <form action="/addspell">
+            <td>
+                <input type="text" name="name" class="name inputfield"/>
+            </td>
+            <td>
+                <input type="text" name="requirements" class="requirements inputfield"/>
+            </td>
+            <td>
+            <input type="number" name="level" class="level inputfield numberfield"/>
+            </td>
+            <td>
+            <input type="text" name="description" class="description inputfield"/>
+            </td>
+            <td>
+            <input type="submit" class="submit scheme">
+            </td>
+        </form>
+    </tr>
+
+</table>
+<button type="button" onclick="location='/'" class="scheme">back</button>
+</body>
+</html>

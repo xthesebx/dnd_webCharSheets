@@ -1,0 +1,218 @@
+
+<!-- saved from url=(0070)file:///C:/Users/sebas/IdeaProjects/Recipes/dndWeb/html/blankChar.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        table {
+            overflow: scroll;
+        }
+        .tablerow {
+            border: 1px solid #afcad5;
+        }
+        .inputfield {
+            text-align: center;
+            border-color: #afcad5;
+            background: #263238;
+            color: #afcad5;
+        }
+        body {
+            background: #263238;
+            color: #afcad5;
+        }
+
+        .submit {
+            background: #263238;
+            color: #afcad5;
+            border-color: #afcad5;
+        }
+        .numberfield {
+            width: 50px;
+            color: #afcad5;
+        }
+        .stats {
+            display: none;
+        }
+        .scheme {
+            background: #263238;
+            color: #afcad5;
+            border-color: #afcad5;
+        }
+    </style>
+</head>
+<body>
+<form action="/editchar/$ID" id="form">
+    <table><tr><td>
+        <table><tr><td>
+            <table>
+                <tr>
+                    <td>
+    <table>
+        <tr>
+            <td class="tablerow"><input name="name" class="name inputfield"><br/>Charaktername</td>
+            <td class="tablerow">
+                <table>
+                    <tr>
+                        <td>
+                            <input name="class" class="class inputfield"><input type="number" name="level" class="level inputfield numberfield"><br/>
+                            <div style="text-align: center"> Klasse &amp; Stufe</div>
+                        </td>
+                        <td style="text-align: center">
+                            <input name="background" class="background inputfield">
+                            <br/>Hintergrund
+                        </td>
+                        <td style="text-align: center">
+                            <input name="playername" class="playername inputfield"><br/>Spielername
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center">
+                            <input name="race" class="race inputfield"><br/>Volk
+                        </td>
+                        <td style="text-align: center">
+                            <input name="alignment" class="alignment inputfield"><br/>Gesinnung
+                        </td>
+                        <td style="text-align: center">
+                            <input name="exp" class="exp inputfield"><br/>Exp
+                        </td>
+                    </tr>
+                    </table>
+            </td>
+    </table></td></tr></tbody></table>
+        </td>
+        </tr>
+        <tr>
+            <td><table><tr><td><table><tbody><tr><td><table><tbody><tr><td><table><tbody>
+            <tr><td class="tablerow" style="text-align: center">Stärke<br><input type="number" name="str" class="str numberfield inputfield"><br><div class="stats" >$STRM</div></td></tr>
+            <tr>
+                <td class="tablerow" style="text-align: center">
+                    Geschicklichkeit<br><input type="number" name="ges" class="ges numberfield inputfield"><br><div  class="stats">$GESM</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tablerow" style="text-align: center">
+                    Konstitution<br><input type="number" name="kon" class="kon numberfield inputfield"><br><div  class="stats">$KONM</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tablerow" style="text-align: center">
+                    Intelligenz<br><input type="number" name="intelligenz" class="intelligenz numberfield inputfield"><br><div  class="stats">$INTM</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tablerow" style="text-align: center">
+                    Weisheit<br><input type="number" name="weis" class="weis numberfield inputfield"><br><div  class="stats">$WEISM</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tablerow" style="text-align: center">
+                    Charisma<br><input type="number" name="cha" class="cha numberfield inputfield"><br><div  class="stats">$CHAM</div>
+                </td>
+            </tr>
+            </table>
+            </td>
+                <td>
+                    <table>
+                        <tbody><tr>
+                            <td class="tablerow" style="text-align: center"><input type="number" name="inspiration" class="inspiration numberfield inputfield"></td><td class="tablerow" style="text-align: center"> Inspiration</td>
+                        </tr>
+                        <tr><td class="tablerow" style="text-align: center"><input type="number" name="übungsbonus" class="übungsbonus numberfield inputfield"></td><td class="tablerow" style="text-align: center">Übungsbonus</td></tr>
+                        <tr><td>
+                            <table class="tablerow">
+                                <tbody><tr><td><input type="checkbox" name="strretü" class="strretü inputfield"><span class="stats">$STRRET</span>Stärke</td></tr>
+                                <tr><td style="display: flex"><input type="checkbox" name="gesretü" class="gesretü inputfield"><span  class="stats">$GESRET</span>Geschicklichkeit</td></tr>
+                                <tr><td><input type="checkbox" name="konretü" class="konretü inputfield"><span class="stats">$KONRET</span>Konstitution</td></tr>
+                                <tr><td><input type="checkbox" name="intretü" class="intretü inputfield"><span class="stats">$INTRET</span>Intelligenz</td></tr>
+                                <tr><td><input type="checkbox" name="weisretü" class="weisretü inputfield"><span class="stats" >$WEISRET</span>Weisheit</td></tr>
+                                <tr><td><input type="checkbox" name="charetü" class="charetü inputfield"><span class="stats" >$CHARET</span>Charisma</td></tr>
+                                <tr><td style="text-align: center">Rettungswürfe</td></tr>
+                                </tbody></table>
+                        </td>
+                        </tr>
+                        <tr><td><table class="tablerow">
+                            <tbody><tr><td><input type="checkbox" name="akrobatikü" class="akrobatikü inputfield"><span  class="stats">$AKROBATIK</span>Akrobatik</td></tr>
+                            <tr><td><input type="checkbox" name="arkaneü" class="arkaneü inputfield"><span  class="stats">$ARKANE</span>Arkane Kunde</td></tr>
+                            <tr><td><input type="checkbox" name="athletikü" class="athletikü inputfield"><span  class="stats">$ATHLETIK</span>Athletik</td></tr>
+                            <tr><td><input type="checkbox" name="auftretenü" class="auftretenü inputfield"><span  class="stats">$AUFTRETEN</span>Auftreten</td></tr>
+                            <tr><td><input type="checkbox" name="einschüchternü" class="einschüchternü inputfield"><span  class="stats">$EINSCH</span>Einschüchtern</td></tr>
+                            <tr><td><input type="checkbox" name="fingerfertigkeitü" class="fingerfertigkeitü inputfield"><span  class="stats">$FF</span>Fingerfertigkeit</td></tr>
+                            <tr><td><input type="checkbox" name="geschichteü" class="geschichteü inputfield"><span  class="stats">$GESCHICHTE</span>Geschichte</td></tr>
+                            <tr><td><input type="checkbox" name="heimlichkeitü" class="heimlichkeitü inputfield"><span  class="stats">$HEIMLICH</span>Heimlichkeit</td></tr>
+                            <tr><td><input type="checkbox" name="medizinü" class="medizinü inputfield"><span  class="stats">$MEDIZIN</span>Medizin</td></tr>
+                            <tr><td style="display: flex"><input type="checkbox" name="tiereü" class="tiereü inputfield"><span  class="stats">$TIERE</span>Mit Tieren umgehen</td></tr>
+                            <tr><td style="display: flex"><input type="checkbox" name="motivü" class="motivü inputfield"><span  class="stats">$MOTIV</span>Motiv erkennen</td></tr>
+                            <tr><td style="display: flex"><input type="checkbox" name="nachforschungenü" class="nachforschungenü inputfield"> <span  class="stats">$NACH</span>Nachforschungen</td></tr>
+                            <tr><td><input type="checkbox" name="naturü" class="naturü inputfield"><span  class="stats">$NATUR</span>Natur</td></tr>
+                            <tr><td><input type="checkbox" name="religionü" class="religinü inputfield"><span  class="stats">$RELI</span>Religion</td></tr>
+                            <tr><td><input type="checkbox" name="täuschenü" class="täuschenü inputfield"><span  class="stats">$TÄUSCHEN</span>Täuschen</td></tr>
+                            <tr><td><input type="checkbox" name="überzeugenü" class="überzeugenü inputfield"><span  class="stats">$ÜBERZEUGEN</span>Überzeugen</td></tr>
+                            <tr><td><input type="checkbox" name="wahrnehmungü" class="wahrnehmungü inputfield"><span  class="stats">$WAHRNEHMUNG</span>Wahrnehmung</td></tr>
+                            <tr><td><input type="checkbox" name="überlebenü" class="überlebenü inputfield"><span  class="stats">$ÜBERLEBEN</span>Überleben</td></tr>
+                            </tbody></table></td></tr>
+                        </tbody></table>
+                </td></tr>
+            </tbody></table>
+            </td>
+            </tr>
+            <tr><td><table>
+            <tr><td class="tablerow" style="text-align: center"><span  class="stats">$PASSIVE</span></td><td class="tablerow" style="text-align: center"> Passive Wahrnehmung</td></tr>
+            </table></td></tr>
+            <tr><td class="tablerow">
+                <input type="text" name="übungen" class="übungen inputfield" style="width: auto; display: inline-block;" >
+                <div  style="text-align: center">Weitere Übungen und Sprachen</div>
+            </td></tr>
+            </tbody></table></td>
+            <td><table><tbody><tr><td><table><tbody><tr><td class="tablerow" style="text-align: center"><span class="stats">$RK</span><br/>Rüstungsklasse</td>
+                <td class="tablerow" style="text-align: center"><input name="initiative" class="initiative inputfield numberfield" type="number"><br/>Initiative</td>
+                <td class="tablerow" style="text-align: center"><input name="bewegung" class="bewegung inputfield numberfield" type="number"><br/>Bewegungsrate</td></tr></tbody></table>
+            </td>
+            </tr>
+            <tr><td class="tablerow">Trefferpunkte Maximum: <input name="maxhp" type="number" class="maxhp inputfield numberfield"><br>
+                <input name="hp" type="number" class="temphp inputfield numberfield"><br><div style="text-align: center">Aktuelle Trefferpunkte</div></td></tr>
+            <tr><td class="tablerow"><input name="temphp" type="number" class="temphp inputfield numberfield"><br/><div style="text-align: center">Temporäre Trefferpunkte</div></td></tr>
+            <tr><td><table><tbody><tr><td class="tablerow">Gesamt: <input type="text" name="trefferwürfelmax" class="trefferwürfelmax inputfield"><br>
+                <input type="text" name="trefferwürfel" class="trefferwürfel inputfield"><br><div style="text-align: center">Trefferwürfel</div></td>
+                <td class="tablerow">Erfolge <input type="checkbox" disabled><input type="checkbox" disabled><input type="checkbox" disabled><br>
+                    Fehlschläge <input type="checkbox" disabled><input type="checkbox" disabled><input type="checkbox" disabled><br><div style="text-align: center">Todesrettungswürfe</div></td></tr></tbody></table>
+            </td></tr>
+            <tr><td class="tablerow"><table><tbody><tr><td>Name</td><td>bonus</td><td>Schaden/Art</td></tr>
+            <tr><td><table style="display: block; max-height: 200px">
+                <!-- OPTIONS -->
+            </table>
+            </td></tr>
+            </tbody></table>
+            </td></tr>
+            <tr><td class="tablerow"><input type="text" name="inventory" class="inventory inputfield"><div style="text-align: center">Inventory</div></td></tr></tbody></table>
+            </td>
+
+            <td>
+                <table><tbody><tr><td class="tablerow">
+                    <input type="text" name="persönlichkeit" class="persönlichkeit inputfield"><br>
+                    <div style="text-align: center">Persönlichkeitsmerkmale</div>
+                </td></tr>
+                <tr><td class="tablerow">
+                    <input type="text" name="ideale" class="ideale inputfield"><br><div style="text-align: center">Ideale</div>
+                </td></tr>
+                <tr><td class="tablerow">
+                    <input type="text" name="bindungen" class="bindungen inputfield"><br>
+                    <div style="text-align: center">Bindungen</div>
+                </td></tr>
+                <tr><td class="tablerow">
+                    <input type="text" name="makel" class="makel inputfield"><br>
+                    <div style="text-align: center">Makel</div>
+                </td></tr>
+                <tr><td class="tablerow">
+                    <input type="text" name="merkmale" class="merkmale inputfield">
+                    <br><div style="text-align: center">Merkmale</div>
+                </td></tr>
+                </tbody></table>
+            </td>
+            </tr></tbody></table></td></tr></table>
+        <td id="spellTable">
+<table style="display: block; max-height: 1000px">
+            <!-- SPELLOPTIONS -->
+        </table>
+        </td></tr>
+        </table></tr></table>
+    <input type="submit" name="submit" class="submit">
+</form>
+<button onclick="window.location = '/charsheet/$ID'" class="scheme">back</button>
+</body></html>
