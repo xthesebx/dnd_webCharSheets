@@ -9,10 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="change some views, make armor class manually editable">
+    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="fix character creator, name in view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/createChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/createChar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/editChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/editChar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/viewChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/viewChar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736957656047</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix character creator, name in view">
+      <option name="closed" value="true" />
+      <created>1736959804610</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1736959804610</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +342,7 @@
     <MESSAGE value="fix 1 sql issue" />
     <MESSAGE value="fix small issue with overview" />
     <MESSAGE value="change some views, make armor class manually editable" />
-    <option name="LAST_COMMIT_MESSAGE" value="change some views, make armor class manually editable" />
+    <MESSAGE value="fix character creator, name in view" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix character creator, name in view" />
   </component>
 </project>

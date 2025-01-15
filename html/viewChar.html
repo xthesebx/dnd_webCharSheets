@@ -1,281 +1,641 @@
-
 <!-- saved from url=(0070)file:///C:/Users/sebas/IdeaProjects/Recipes/dndWeb/html/blankChar.html -->
-<html><head>
+<html>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$NAME</title>
 </head>
 <body>
-<table><tr><td>
-<table><tr><td>
-    <table>
+<table>
     <tr>
-        <td><table><tr><td class="tablerow">Name: $NAME</td>
-            <td class="tablerow">
-                <table>
-                    <tbody><tr>
-                        <td>
-                            Klasse &amp; Stufe: $CLASS $LEVEL
-                        </td>
-                        <td>
-                            Hintergrund: $BACKGROUND
-                        </td>
-                        <td>
-                            Spielername: $PLAYERNAME
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Volk: $RACE
-                        </td>
-                        <td>
-                            Gesinnung: $ALIGNMENT
-                        </td>
-                        <td>
-                            Exp: $EXP
-                        </td></tr></table></td>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td class="tablerow">Name: $NAME</td>
+                                            <td class="tablerow">
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            Klasse &amp; Stufe: $CLASS $LEVEL
+                                                        </td>
+                                                        <td>
+                                                            Hintergrund: $BACKGROUND
+                                                        </td>
+                                                        <td>
+                                                            Spielername: $PLAYERNAME
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Volk: $RACE
+                                                        </td>
+                                                        <td>
+                                                            Gesinnung: $ALIGNMENT
+                                                        </td>
+                                                        <td>
+                                                            Exp: $EXP
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
 
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody></table>
+                    </td>
                 </tr>
-        </table></td></tr></tbody></table>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <table>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        Stärke<br>$STR<br>$STRM
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        Geschicklichkeit<br>$GES<br>$GESM
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        Konstitution<br>$KON<br>$KONM
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        Intelligenz<br>$INTELLIGENZ<br>$INTM
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        Weisheit<br>$WEIS<br>$WEISM
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        Charisma<br>$CHA<br>$CHAM
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td>
+                                                            <table>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        $INSPIRATION
+                                                                    </td>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        Inspiration
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        $ÜBUNGSBONUS
+                                                                    </td>
+                                                                    <td class="tablerow" style="text-align: center">
+                                                                        Übungsbonus
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <table class="tablerow">
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td>[$STRRETÜ] $STRRET Stärke</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$GESRETÜ] $GESRET
+                                                                                    Geschicklichkeit
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$KONRETÜ] $KONRET Konstitution</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$INTRETÜ] $INTRET Intelligenz</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$WEISRETÜ] $WEISRET Weisheit</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$CHARETÜ] $CHARET Charisma</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="text-align: center">
+                                                                                    Rettungswürfe
+                                                                                </td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <table class="tablerow">
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td>[$AKROBATIKÜ] $AKROBATIK Akrobatik
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$ARKANEÜ] $ARKANE Arkane Kunde</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$ATHLETIKÜ] $ATHLETIK Athletik</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$AUFTRETENÜ] $AUFTRETEN Auftreten
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$EINSCHÜCHTERNÜ] $EINSCH
+                                                                                    Einschüchtern
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$FINGERFERTIGKEITÜ] $FF
+                                                                                    Fingerfertigkeit
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$GESCHICHTEÜ] $GESCHICHTE
+                                                                                    Geschichte
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$HEIMLICHKEITÜ] $HEIMLICH
+                                                                                    Heimlichkeit
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$MEDIZINÜ] $MEDIZIN Medizin</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$TIEREÜ] $TIERE Mit Tieren
+                                                                                    umgehen
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$MOTIVÜ] $MOTIV Motiv erkennen</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$NACHFORSCHUNGENÜ] $NACH
+                                                                                    Nachforschungen
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$NATURÜ] $NATUR Natur</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$RELIGIONÜ] $RELI Religion</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$TÄUSCHENÜ] $TÄUSCHEN Täuschen</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$ÜBERZEUGENÜ] $ÜBERZEUGEN
+                                                                                    Überzeugen
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$WAHRNEHMUNGÜ] $WAHRNEHMUNG
+                                                                                    Wahrnehmung
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>[$ÜBERLEBENÜ] $ÜBERLEBEN Überleben
+                                                                                </td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="tablerow" style="text-align: center">$PASSIVE</td>
+                                                        <td class="tablerow" style="text-align: center"> Passive
+                                                            Wahrnehmung
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablerow" style="max-width: 100px">
+                                                $ÜBUNGEN<br>
+                                                <div style="text-align: center">Weitere Übungen und Sprachen</div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="tablerow" style="text-align: center">$RÜSTUNGSKLASSE
+                                                            <br/>Rüstungsklasse
+                                                        </td>
+                                                        <td class="tablerow" style="text-align: center">$INITIATIVE<br/>Initiative
+                                                        </td>
+                                                        <td class="tablerow" style="text-align: center">$BEWEGUNG<br/>Bewegungsrate
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablerow">Trefferpunkte Maximum $MAXHP<br>$HP<br>
+                                                <div style="text-align: center">Aktuelle Trefferpunkte</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablerow">$TEMPHP<br/>
+                                                <div style="text-align: center">Temporäre Trefferpunkte</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="tablerow">Gesamt: $TREFFERWÜRFELMAX<br>$TREFFERWÜRFEL<br>
+                                                            <div style="text-align: center">Trefferwürfel</div>
+                                                        </td>
+                                                        <td class="tablerow">Erfolge [$DEATHSAVESUC]<br>
+                                                            Fehlschläge [$DEATHSAVEFAIL]<br>
+                                                            <div style="text-align: center">Todesrettungswürfe</div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablerow">
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Name</td>
+                                                        <td>Bonus</td>
+                                                        <td>Schaden/Art</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$WAFFEN</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablerow">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td>$INVENTORY</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>KM: $KUPFERMÜNZEN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>SM: $SILBERMÜNZEN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>EM: $ELEKTRUMMÜNZEN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>GM: $GOLDMÜNZEN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>PM: $PLATINMÜNZEN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center">Inventory</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+
+                                <td>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td class="tablerow">
+                                                $PERSÖNLICHKEIT<br>
+                                                <div style="text-align: center">Persönlichkeitsmerkmale</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablerow">
+                                                $IDEALE<br>
+                                                <div style="text-align: center">Ideale</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablerow">
+                                                $BINDUNGEN<br>
+                                                <div style="text-align: center">Bindungen</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablerow">
+                                                $MAKEL<br>
+                                                <div style="text-align: center">Makel</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablerow">
+                                                $MERKMALE
+                                                <br>
+                                                <div style="text-align: center">Merkmale</div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody></table>
+                    </td>
+                </tr>
+            </table>
+
+        <td id="spellTable">
+            <table>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td class="tablerow">$CLASS</td>
+                                            <td class="tablerow">$CLASSSPELL</td>
+                                            <td class="tablerow">$SPELLSAVE</td>
+                                            <td class="tablerow">$SPELLBONUS</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <table class="spell0" style="display: none">
+                                                    <tr>
+                                                        <td>
+                                                            <table>
+                                                                <tr>
+                                                                    <td class="tablerow">
+                                                                        0
+                                                                    </td>
+                                                                    <td class="tablerow">
+                                                                        Zaubertricks
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <table>
+                                                                $SPELLLIST0
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table class="spell1" style="display: none">
+                                                    <tr>
+                                                        <td>
+                                                            <table>
+                                                                <tr>
+                                                                    <td class="tablerow">1</td>
+                                                                    <td class="tablerow">$SPELL1COUNT</td>
+                                                                    <td class="tablerow">$SPELL1USED</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <table>
+                                                                $SPELLLIST1
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table class="spell2" style="display: none">
+                                                    <tr>
+                                                        <td>
+                                                            <table>
+                                                                <tr>
+                                                                    <td class="tablerow">2</td>
+                                                                    <td class="tablerow">$SPELL2COUNT</td>
+                                                                    <td class="tablerow">$SPELL2USED</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <table>
+                                                                $SPELLLIST2
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table class="spell3" style="display: none">
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="tablerow">3</td>
+                                                        <td class="tablerow">$SPELL3COUNT</td>
+                                                        <td class="tablerow">$SPELL3USED</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table>$SPELLLIST3</table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table class="spell4" style="display: none">
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="tablerow">4</td>
+                                                        <td class="tablerow">$SPELL4COUT</td>
+                                                        <td class="tablerow">$SPELL4USED</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table>$SPELLLIST4</table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table class="spell5" style="display: none">
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="tablerow">5</td>
+                                                        <td class="tablerow">$SPELL5COUNT</td>
+                                                        <td class="tablerow">$SPELL5USED</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table>$SPELLLIST5</table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <table class="spell6" style="display: none">
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="tablerow">6</td>
+                                                        <td class="tablerow">$SPELL6COUNT</td>
+                                                        <td class="tablerow">$SPELL6USED</td>
+                                                    </tr>
+                                                </table>
+                                                <table>$SPELLLIST6</table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table class="spell7" style="display: none">
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="tablerow">7</td>
+                                                        <td class="tablerow">$SPELL7COUNT</td>
+                                                        <td class="tablerow">$SPELL7USED</td>
+                                                    </tr>
+                                                </table>
+                                                <table>$SPELLLIST7</table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table class="spell8" style="display: none">
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="tablerow">8</td>
+                                                        <td class="tablerow">$SPELL8COUNT</td>
+                                                        <td class="tablerow">$SPELL8USED</td>
+                                                    </tr>
+                                                </table>
+                                                <table>$SPELLLIST8</table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table class="spell9" style="display: none">
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="tablerow">9</td>
+                                                        <td class="tablerow">$SPELL9COUNT</td>
+                                                        <td class="tablerow">$SPELL9USED</td>
+                                                    </tr>
+                                                </table>
+                                                <table>$SPELLLIST9</table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
         </td>
     </tr>
-    <tr>
-        <td><table><tr><td><table><tbody><tr><td><table><tbody><tr><td><table><tbody>
-        <tr><td class="tablerow" style="text-align: center">Stärke<br>$STR<br>$STRM</td></tr>
-            <tr>
-                <td class="tablerow" style="text-align: center">
-                    Geschicklichkeit<br>$GES<br>$GESM
-                </td>
-            </tr>
-            <tr>
-                <td class="tablerow" style="text-align: center">
-                    Konstitution<br>$KON<br>$KONM
-                </td>
-            </tr>
-            <tr>
-                <td class="tablerow" style="text-align: center">
-                    Intelligenz<br>$INTELLIGENZ<br>$INTM
-                </td>
-            </tr>
-            <tr>
-                <td class="tablerow" style="text-align: center">
-                    Weisheit<br>$WEIS<br>$WEISM
-                </td>
-            </tr>
-            <tr>
-                <td class="tablerow" style="text-align: center">
-                    Charisma<br>$CHA<br>$CHAM
-                </td>
-            </tr>
-        </tbody></table>
-        </td>
-            <td>
-                <table>
-                    <tbody><tr>
-                        <td class="tablerow" style="text-align: center">$INSPIRATION</td><td class="tablerow" style="text-align: center"> Inspiration</td>
-                    </tr>
-                    <tr><td class="tablerow" style="text-align: center">$ÜBUNGSBONUS</td><td class="tablerow" style="text-align: center">Übungsbonus</td></tr>
-                    <tr><td>
-                        <table class="tablerow">
-                            <tbody><tr><td>[$STRRETÜ] $STRRET Stärke</td></tr>
-                            <tr><td>[$GESRETÜ] $GESRET Geschicklichkeit</td></tr>
-                            <tr><td>[$KONRETÜ] $KONRET Konstitution</td></tr>
-                            <tr><td>[$INTRETÜ] $INTRET Intelligenz</td></tr>
-                            <tr><td>[$WEISRETÜ] $WEISRET Weisheit</td></tr>
-                            <tr><td>[$CHARETÜ] $CHARET Charisma</td></tr>
-                            <tr><td style="text-align: center">Rettungswürfe</td></tr>
-                        </tbody></table>
-                    </td>
-                    </tr>
-                    <tr><td><table class="tablerow">
-                        <tbody><tr><td>[$AKROBATIKÜ] $AKROBATIK Akrobatik</td></tr>
-                        <tr><td>[$ARKANEÜ] $ARKANE Arkane Kunde</td></tr>
-                        <tr><td>[$ATHLETIKÜ] $ATHLETIK Athletik</td></tr>
-                        <tr><td>[$AUFTRETENÜ] $AUFTRETEN Auftreten</td></tr>
-                        <tr><td>[$EINSCHÜCHTERNÜ] $EINSCH Einschüchtern</td></tr>
-                        <tr><td>[$FINGERFERTIGKEITÜ] $FF Fingerfertigkeit</td></tr>
-                        <tr><td>[$GESCHICHTEÜ] $GESCHICHTE Geschichte</td></tr>
-                        <tr><td>[$HEIMLICHKEITÜ] $HEIMLICH Heimlichkeit</td></tr>
-                        <tr><td>[$MEDIZINÜ] $MEDIZIN Medizin</td></tr>
-                        <tr><td>[$TIEREÜ] $TIERE Mit Tieren umgehen</td></tr>
-                        <tr><td>[$MOTIVÜ] $MOTIV Motiv erkennen</td></tr>
-                        <tr><td>[$NACHFORSCHUNGENÜ] $NACH Nachforschungen</td></tr>
-                        <tr><td>[$NATURÜ] $NATUR Natur</td></tr>
-                        <tr><td>[$RELIGIONÜ] $RELI Religion</td></tr>
-                        <tr><td>[$TÄUSCHENÜ] $TÄUSCHEN Täuschen</td></tr>
-                        <tr><td>[$ÜBERZEUGENÜ] $ÜBERZEUGEN Überzeugen</td></tr>
-                        <tr><td>[$WAHRNEHMUNGÜ] $WAHRNEHMUNG Wahrnehmung</td></tr>
-                        <tr><td>[$ÜBERLEBENÜ] $ÜBERLEBEN Überleben</td></tr>
-                    </tbody></table></td></tr>
-                </tbody></table>
-            </td></tr>
-        </tbody></table>
-        </td>
-        </tr>
-        <tr><td><table>
-            <tr><td class="tablerow" style="text-align: center">$PASSIVE</td><td class="tablerow" style="text-align: center"> Passive Wahrnehmung</td></tr>
-        </table></td></tr>
-            <tr><td class="tablerow" style="max-width: 100px">
-                $ÜBUNGEN<br>
-                <div  style="text-align: center">Weitere Übungen und Sprachen</div>
-            </td></tr>
-        </tbody></table></td>
-        <td><table><tbody><tr><td><table><tbody><tr><td class="tablerow" style="text-align: center">$RÜSTUNGSKLASSE <br/>Rüstungsklasse</td><td class="tablerow" style="text-align: center">$INITIATIVE<br/>Initiative</td><td class="tablerow" style="text-align: center">$BEWEGUNG<br/>Bewegungsrate</td></tr></tbody></table>
-        </td>
-        </tr>
-            <tr><td class="tablerow">Trefferpunkte Maximum $MAXHP<br>$HP<br><div style="text-align: center">Aktuelle Trefferpunkte</div></td></tr>
-        <tr><td class="tablerow">$TEMPHP<br/><div style="text-align: center">Temporäre Trefferpunkte</div></td></tr>
-            <tr><td><table><tbody><tr><td class="tablerow">Gesamt: $TREFFERWÜRFELMAX<br>$TREFFERWÜRFEL<br><div style="text-align: center">Trefferwürfel</div></td><td class="tablerow">Erfolge [$DEATHSAVESUC]<br>
-                Fehlschläge [$DEATHSAVEFAIL]<br><div style="text-align: center">Todesrettungswürfe</div></td></tr></tbody></table>
-            </td></tr>
-            <tr><td class="tablerow"><table><tbody><tr><td>Name</td><td>Bonus</td><td>Schaden/Art</td></tr>
-                <tr><td>$WAFFEN</td></tr>
-            </tbody></table>
-            </td></tr>
-            <tr><td class="tablerow">$INVENTORY</td></tr></tbody></table>
-        </td>
-
-<td>
-        <table><tbody><tr><td class="tablerow">
-            $PERSÖNLICHKEIT<br>
-            <div style="text-align: center">Persönlichkeitsmerkmale</div>
-        </td></tr>
-            <tr><td class="tablerow">
-                $IDEALE<br><div style="text-align: center">Ideale</div>
-            </td></tr>
-            <tr><td class="tablerow">
-                $BINDUNGEN<br>
-                <div style="text-align: center">Bindungen</div>
-            </td></tr>
-            <tr><td class="tablerow">
-                $MAKEL<br>
-                <div style="text-align: center">Makel</div>
-            </td></tr>
-            <tr><td class="tablerow">
-                $MERKMALE
-                <br><div style="text-align: center">Merkmale</div>
-            </td></tr>
-        </tbody></table>
-    </td>
-</tr></tbody></table></td></tr></table>
-
-    <td id="spellTable">
-        <table>
-            <tr>
-                <td>
-                    <table><tr><td><table><tr><td class="tablerow">$CLASS</td><td class="tablerow">$CLASSSPELL</td>
-                        <td class="tablerow">$SPELLSAVE</td><td class="tablerow">$SPELLBONUS</td></tr></table>
-                    </td></tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <table>
-                        <tr><td>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <table class="spell0" style="display: none">
-                                            <tr>
-                                                <td>
-                                                    <table>
-                                                        <tr>
-                                                            <td class="tablerow">
-                                                                0
-                                                            </td>
-                                                            <td class="tablerow">
-                                                                Zaubertricks
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td></tr>
-                                            <tr><td><table>
-                                                $SPELLLIST0
-                                            </table>
-                                            </td>
-                                            </tr>
-                                        </table>
-                                    </td></tr>
-                                <tr><td><table class="spell1" style="display: none">
-                                    <tr><td><table>
-                                        <tr><td class="tablerow">1</td><td class="tablerow">$SPELL1COUNT</td><td class="tablerow">$SPELL1USED</td></tr>
-                                    </table></td></tr>
-                                    <tr><td><table>
-                                        $SPELLLIST1
-                                    </table></td></tr>
-
-                                </table>
-                                </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <table class="spell2" style="display: none"><tr><td>
-                                            <table><tr>
-                                                <td class="tablerow">2</td>
-                                                <td class="tablerow">$SPELL2COUNT</td>
-                                                <td class="tablerow">$SPELL2USED</td>
-                                            </tr>
-                                            </table>
-                                        </td></tr>
-                                            <tr>
-                                                <td>
-                                                    <table>
-                                                                $SPELLLIST2
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                            <td>
-                                <table class="spell3" style="display: none"><tr><td>
-                                    <table><tr><td class="tablerow">3</td><td class="tablerow">$SPELL3COUNT</td> <td class="tablerow">$SPELL3USED</td></tr></table></td></tr>
-                                    <tr><td><table>$SPELLLIST3</table></td></tr></table>
-                                <table class="spell4" style="display: none"><tr><td>
-                                    <table><tr><td class="tablerow">4</td><td class="tablerow">$SPELL4COUT</td> <td class="tablerow">$SPELL4USED</td></tr></table></td></tr>
-                                    <tr><td><table>$SPELLLIST4</table>
-                                </td></tr></table>
-                                <table class="spell5" style="display: none"><tr><td>
-                                    <table><tr><td class="tablerow">5</td><td class="tablerow">$SPELL5COUNT</td> <td class="tablerow">$SPELL5USED</td></tr></table></td></tr>
-                                    <tr><td><table>$SPELLLIST5</table>
-                                </td></tr></table>
-                                </td>
-                                </tr>
-                                </table>
-                            </td>
-                            <td>
-                                <table><tr><td>
-                                    <table class="spell6" style="display: none"><tr><td>
-                                    <table><tr><td class="tablerow">6</td><td class="tablerow">$SPELL6COUNT</td> <td class="tablerow">$SPELL6USED</td></tr></table>
-                                    <table>$SPELLLIST6</table>
-                                    </td></tr></table>
-                                    <table class="spell7" style="display: none"><tr><td>
-                                    <table><tr><td class="tablerow">7</td><td class="tablerow">$SPELL7COUNT</td> <td class="tablerow">$SPELL7USED</td></tr></table>
-                                    <table>$SPELLLIST7</table>
-                                    </td></tr></table>
-                                    <table class="spell8" style="display: none"><tr><td>
-                                    <table><tr><td class="tablerow">8</td><td class="tablerow">$SPELL8COUNT</td> <td class="tablerow">$SPELL8USED</td></tr></table>
-                                    <table>$SPELLLIST8</table>
-                                    </td></tr></table>
-                                    <table class="spell9" style="display: none"><tr><td>
-                                    <table><tr><td class="tablerow">9</td><td class="tablerow">$SPELL9COUNT</td> <td class="tablerow">$SPELL9USED</td></tr></table>
-                                    <table>$SPELLLIST9</table>
-                                    </td></tr></table>
-
-                                </td>
-                                </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </td></tr></table></tr></table>
+</table>
+</td></tr></table></tr></table>
 <button onclick="window.location = '/'" class="scheme">back</button>
 <button onclick="window.location = '/edit/$ID'" class="scheme">edit</button>
-</body></html>
+</body>
+</html>
