@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="try to add responsiveness">
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/register.html" afterDir="false" />
+    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="logs host?">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/abs/JavalinLoggedInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/abs/JavalinLoggedInPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +219,31 @@
       <option name="project" value="LOCAL" />
       <updated>1736954906047</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="make it not default to capitalize">
+      <option name="closed" value="true" />
+      <created>1736955144820</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736955144820</updated>
+    </task>
+    <task id="LOCAL-00011" summary="remove some stuff temporarily">
+      <option name="closed" value="true" />
+      <created>1736955286651</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736955286651</updated>
+    </task>
+    <task id="LOCAL-00012" summary="logs host?">
+      <option name="closed" value="true" />
+      <created>1736955351707</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736955351707</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +281,9 @@
     <MESSAGE value="can now add weapons and spells and more" />
     <MESSAGE value="fix ide" />
     <MESSAGE value="try to add responsiveness" />
-    <option name="LAST_COMMIT_MESSAGE" value="try to add responsiveness" />
+    <MESSAGE value="make it not default to capitalize" />
+    <MESSAGE value="remove some stuff temporarily" />
+    <MESSAGE value="logs host?" />
+    <option name="LAST_COMMIT_MESSAGE" value="logs host?" />
   </component>
 </project>
