@@ -12,7 +12,7 @@ public class AddSpell extends JavalinLoggedInPage {
         super(ctx);
         if (cancel) return;
         try {
-            Mysql.addSpell(ctx.queryParam("name"), ctx.queryParam("requirements"), ctx.queryParam("level"), ctx.queryParam("description"));
+            Mysql.addSpell(ctx.formParam("name"), ctx.formParam("requirements"), ctx.formParam("level"), ctx.formParam("description"));
         } catch (SQLException e) {
             ctx.redirect("/spellAdd?error=true");
             return;

@@ -11,8 +11,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Mysql {
 
@@ -57,7 +59,7 @@ public class Mysql {
             if (key.contains("submit")) return;
             if (value.get(0).isEmpty()) return;
             statement.append(", ").append(key);
-            if (value.get(0).equals("on")) {
+            if (key.endsWith("ü")) {
                 values.append(", '").append(1).append("'");
                 return;
             }
@@ -118,16 +120,51 @@ public class Mysql {
     public static void editCharacter(String characterId, Map<String, List<String>> stringListMap) throws SQLException {
         checkCon();
         StringBuilder statement = new StringBuilder("UPDATE dnd.characters SET ");
+        AtomicInteger i = new AtomicInteger();
+        ArrayList<String> übungslist = new ArrayList<>();
+        übungslist.add("strretü");
+        übungslist.add("gesretü");
+        übungslist.add("konretü");
+        übungslist.add("intretü");
+        übungslist.add("weisretü");
+        übungslist.add("charetü");
+        übungslist.add("akrobatikü");
+        übungslist.add("arkaneü");
+        übungslist.add("athletikü");
+        übungslist.add("auftretenü");
+        übungslist.add("einschüchternü");
+        übungslist.add("fingerfertigkeitü");
+        übungslist.add("geschichteü");
+        übungslist.add("heimlichkeitü");
+        übungslist.add("medizinü");
+        übungslist.add("tiereü");
+        übungslist.add("motivü");
+        übungslist.add("nachforschungenü");
+        übungslist.add("naturü");
+        übungslist.add("religionü");
+        übungslist.add("täuschenü");
+        übungslist.add("überzeugenü");
+        übungslist.add("wahrnehmungü");
+        übungslist.add("überlebenü");
         stringListMap.forEach((key, value) -> {
             if (value.contains(";") || value.contains("'") || key.contains("'") || key.contains(";")) {return;}
             if (key.contains("submit")) return;
             if (value.get(0).isEmpty()) return;
             if (key.contains("weapon")) return;
             if (key.contains("spells")) return;
+            if (value.get(0).equals("null")) return;
             String s = value.get(0);
-            if (s.equals("on")) s = "1";
+            if (key.endsWith("ü")) {
+                übungslist.remove(key);
+                s = "1";
+            }
             statement.append(key).append(" = '").append(s).append("', ");
+            i.getAndIncrement();
         });
+        übungslist.forEach(value -> {
+            statement.append(value).append(" = '").append("0").append("', ");
+        });
+        if (i.get() == 0) return;
         statement.delete(statement.length() - 2, statement.length());
         statement.append(" WHERE id = '" + characterId + "';");
         con.prepareStatement(statement.toString()).executeUpdate();
@@ -204,5 +241,15 @@ public class Mysql {
     public static void addWeapon(String name, String finesse, String damage, String damagetype, String spell) throws SQLException {
         checkCon();
         con.prepareStatement("INSERT INTO waffen (`name`, `finesse`, `damage`, `damagetype`, `spell`) VALUES ('" + name + "', '" + finesse + "', '" + damage + "', '" + damagetype + "', '" + spell + "');").executeUpdate();
+    }
+
+    public static void deleteChar(String id) throws SQLException {
+        checkCon();
+        String statement = "DELETE FROM char_spells WHERE `character` = '" + id + "';";
+        con.prepareStatement(statement).executeUpdate();
+        statement = "DELETE FROM waffen_character WHERE `character` = '" + id + "';";
+        con.prepareStatement(statement).executeUpdate();
+        statement = "DELETE FROM characters WHERE `id` = '" + id + "';";
+        con.prepareStatement(statement).executeUpdate();
     }
 }

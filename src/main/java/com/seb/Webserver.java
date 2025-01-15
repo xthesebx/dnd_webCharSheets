@@ -26,8 +26,11 @@ public class Webserver {
         javalin.post("/kill", Kill::new);
         javalin.post("/createcodes", CreateCodes::new);
         javalin.post("/registerpost", Register::new);
+        javalin.post("/savenewchar", CharacterNewSave::new);
+        javalin.post("/addspell", AddSpell::new);
+        javalin.post("/addweapon", AddWeapon::new);
+        javalin.post("/editchar/<id>", CharacterEditSave::new);
 
-        javalin.get("/savenewchar", CharacterNewSave::new);
         javalin.get("/logout", Logout::new);
         javalin.get("/login", LoginPage::new);
         javalin.get("/", Overview::new);
@@ -38,11 +41,10 @@ public class Webserver {
         javalin.get("/editable", ctx -> ctx.html(FileUtil.readFile("html/editableChar.html")));
         javalin.get("/charsheet/<id>", CharView::new);
         javalin.get("/edit/<id>", CharacterEdit::new);
-        javalin.get("/editchar/<id>", CharacterEditSave::new);
         javalin.get("/weaponAdd", WeaponAdd::new);
         javalin.get("/spellAdd", SpellAdd::new);
-        javalin.get("/addspell", AddSpell::new);
-        javalin.get("/addweapon", AddWeapon::new);
         javalin.get("/style.css", ctx -> ctx.html(FileUtil.readFile("html/style.css")));
+
+        javalin.get("/delete/<id>", CharacterDelete::new);
     }
 }

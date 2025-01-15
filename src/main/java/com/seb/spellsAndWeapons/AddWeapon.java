@@ -13,12 +13,12 @@ public class AddWeapon extends JavalinLoggedInPage {
         super(ctx);
         if (cancel) return;
         String finesse, spell;
-        if (ctx.queryParam("finesse") == null) finesse = "0";
+        if (ctx.formParam("finesse") == null) finesse = "0";
         else finesse = "1";
-        if (ctx.queryParam("spell") == null) spell = "0";
+        if (ctx.formParam("spell") == null) spell = "0";
         else spell = "1";
         try {
-        Mysql.addWeapon(ctx.queryParam("name"), finesse, ctx.queryParam("damage"), ctx.queryParam("damagetype"), spell);
+        Mysql.addWeapon(ctx.formParam("name"), finesse, ctx.formParam("damage"), ctx.formParam("damagetype"), spell);
         } catch (SQLException e) {
             ctx.redirect("/weaponAdd?error=true");
             return;

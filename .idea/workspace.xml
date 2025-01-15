@@ -9,7 +9,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="can now add weapons and spells and more" />
+    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="fix ide">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharacterDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/CharSheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/CharSheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/Overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/adminPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/blankChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/blankChar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/createChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/createChar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/editChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/editChar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/editableChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/editableChar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/spellAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/spellAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/viewChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/viewChar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/weaponAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/weaponAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Webserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Webserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/Overview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharacterEditSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharacterEditSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharacterNewSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharacterNewSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/spellsAndWeapons/AddSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/spellsAndWeapons/AddSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/spellsAndWeapons/AddWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/spellsAndWeapons/AddWeapon.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,33 +76,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.pdf.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;77256f57&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sebas/IdeaProjects/Recipes/dndWeb&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.24942529&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MTFeaturesSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JavaScript Debug.pdf.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/sebas/IdeaProjects/Recipes/dndWeb",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.24942529",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb" />
@@ -87,8 +111,8 @@
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\src\main\java\com\seb" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\html" />
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb" />
+      <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\html" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.seb.spellsAndWeapons" />
@@ -245,6 +269,7 @@
     <MESSAGE value="rebuild in java17" />
     <MESSAGE value="change port" />
     <MESSAGE value="can now add weapons and spells and more" />
-    <option name="LAST_COMMIT_MESSAGE" value="can now add weapons and spells and more" />
+    <MESSAGE value="fix ide" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ide" />
   </component>
 </project>

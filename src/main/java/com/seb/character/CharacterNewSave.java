@@ -11,7 +11,7 @@ public class CharacterNewSave extends JavalinLoggedInPage {
     public CharacterNewSave(Context ctx) throws SQLException, NoSuchAlgorithmException {
         super(ctx);
         if (cancel) return;
-        Mysql.addCharacter(getUser(), ctx.queryParamMap());
+        Mysql.addCharacter(getUser(), ctx.formParamMap());
         ctx.redirect("/");
     }
 }

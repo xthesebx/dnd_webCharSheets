@@ -11,7 +11,7 @@ public class CharacterEditSave extends JavalinAuthPage {
     public CharacterEditSave(Context ctx) throws SQLException, NoSuchAlgorithmException {
         super(ctx);
         if (cancel) return;
-        Mysql.editCharacter(ctx.pathParam("id"), ctx.queryParamMap());
+        Mysql.editCharacter(ctx.pathParam("id"), ctx.formParamMap());
         ctx.redirect("/charsheet/" + ctx.pathParam("id"));
     }
 }

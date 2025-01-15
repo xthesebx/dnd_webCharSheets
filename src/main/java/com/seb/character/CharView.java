@@ -41,7 +41,7 @@ public class CharView extends JavalinAuthPage {
             }
             if (rsmd.getColumnName(i).equals("id")) {continue;}
             if (rs.getString(i) == null) {
-                html = html.replace("$" + rsmd.getColumnName(i).toUpperCase(), "");
+                html = html.replaceFirst("\\$" + rsmd.getColumnName(i).toUpperCase(), "");
                 continue;
             }
             if (rsmd.getColumnName(i).equals("class")) {

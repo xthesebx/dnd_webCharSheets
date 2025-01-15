@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         new Webserver();
-        //TODO:spells seite, layouts für fight etc., Spells und Waffen in DB, RK calculation mit Armor
+        //TODO: layouts für fight etc., Spells und Waffen in DB, RK calculation mit Armor, layout editor
         Mysql.createMysql();
     }
 
