@@ -9,8 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="add auto login for local instance">
+    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="fix small issue with overview">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/Overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/Overview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +67,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sebas/IdeaProjects/Recipes/dndWeb",
+    "last_opened_file_path": "C:/Users/sebas/IdeaProjects/Recipes/dndWeb/src/main/java/com/seb/spellsAndWeapons",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,6 +87,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\src\main\java\com\seb\spellsAndWeapons" />
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb" />
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\html" />
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\md" />
@@ -259,7 +264,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736955738186</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix 1 sql issue">
+      <option name="closed" value="true" />
+      <created>1736955884269</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1736955884269</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix small issue with overview">
+      <option name="closed" value="true" />
+      <created>1736955912365</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1736955912365</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +323,8 @@
     <MESSAGE value="logs host?" />
     <MESSAGE value="log url?" />
     <MESSAGE value="add auto login for local instance" />
-    <option name="LAST_COMMIT_MESSAGE" value="add auto login for local instance" />
+    <MESSAGE value="fix 1 sql issue" />
+    <MESSAGE value="fix small issue with overview" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix small issue with overview" />
   </component>
 </project>

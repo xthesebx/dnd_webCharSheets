@@ -72,7 +72,7 @@ public class Mysql {
 
     public static ResultSet getCharacters(String user) throws SQLException {
         checkCon();
-        return con.prepareStatement("SELECT name, id FROM characters WHERE owner = '" + user + "';").executeQuery();
+        return con.prepareStatement("SELECT name, id, class, level FROM characters WHERE owner = '" + user + "';").executeQuery();
     }
 
     public static void addCode(String code) throws SQLException {

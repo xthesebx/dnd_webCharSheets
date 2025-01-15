@@ -116,7 +116,6 @@ public class CharView extends JavalinAuthPage {
                 .replace("$WAHRNEHMUNG", skillÜbung[16] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
                 .replace("$ÜBERLEBEN", skillÜbung[0] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
                 .replace("$PASSIVE", skillÜbung[16] ? String.valueOf(weis + übungsbonus + 10) : String.valueOf(weis + 10))
-                .replace("$RK",  String.valueOf(ges + 10))
                 .replace("$ID", ctx.pathParam("id"))
                 .replace("<tr><td>$WAFFEN</td></tr>", waffen.toString())
                 .replace("Erfolge [0]", "Erfolge [0][0][0]")
