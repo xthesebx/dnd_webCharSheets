@@ -22,7 +22,7 @@ public class JavalinLoggedInPage extends JavalinPage {
             Logger.error(ctx.ip());
             if (ctx.ip().equals("127.0.0.1")) {
                 JSONObject logindata = new JSONObject();
-                try {
+                /*try {
                     logindata = new JSONObject(Files.readString(Path.of("logindata.json")));
                 } catch (IOException e) {
                     Logger.error(e);
@@ -43,7 +43,7 @@ public class JavalinLoggedInPage extends JavalinPage {
                 if (ls.equals(LoginStatus.SUCCESS))
                     sessionobject.put("user", username).put("timestamp", System.currentTimeMillis() + 900000);
                 Main.sessionUserTimer.put(sessionid, sessionobject);
-                return;
+                return;*/
             }
             ctx.redirect("/login");
             cancel = true;
