@@ -8,6 +8,7 @@ import io.javalin.http.Context;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
@@ -19,10 +20,10 @@ public class JavalinLoggedInPage extends JavalinPage {
     public JavalinLoggedInPage(Context ctx) throws NoSuchAlgorithmException, SQLException {
         super(ctx);
         if (!Main.isLoggedIn(ctx.cookie("JSESSIONID"))) {
-            Logger.error(ctx.url());
-            if (ctx.ip().equals("127.0.0.1")) {
+            URL path = Main.class.getResource("Main.class");
+            if (path != null && path.toString().startsWith("file")) {
                 JSONObject logindata = new JSONObject();
-                /*try {
+                try {
                     logindata = new JSONObject(Files.readString(Path.of("logindata.json")));
                 } catch (IOException e) {
                     Logger.error(e);
@@ -43,7 +44,7 @@ public class JavalinLoggedInPage extends JavalinPage {
                 if (ls.equals(LoginStatus.SUCCESS))
                     sessionobject.put("user", username).put("timestamp", System.currentTimeMillis() + 900000);
                 Main.sessionUserTimer.put(sessionid, sessionobject);
-                return;*/
+                return;
             }
             ctx.redirect("/login");
             cancel = true;
