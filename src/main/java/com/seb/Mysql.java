@@ -109,7 +109,7 @@ public class Mysql {
     }
 
     private static void checkCon() throws SQLException {
-        if (con.isClosed()) createMysql();
+        if (con == null || con.isClosed()) createMysql();
     }
 
     public static ResultSet getWeapons() throws SQLException {
