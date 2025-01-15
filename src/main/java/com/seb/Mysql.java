@@ -2,6 +2,7 @@ package com.seb;
 
 import com.hawolt.logger.Logger;
 import com.seb.Login.LoginStatus;
+import io.javalin.util.FileUtil;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -172,6 +173,7 @@ public class Mysql {
             if (value.get(0).isEmpty()) return;
             if (key.contains("weapon")) return;
             if (key.contains("spells")) return;
+            if (key.equals("tab")) return;
             if (value.get(0).equals("null")) return;
             String s = value.get(0);
             if (key.endsWith("ü")) {
@@ -271,5 +273,33 @@ public class Mysql {
         con.prepareStatement(statement).executeUpdate();
         statement = "DELETE FROM characters WHERE `id` = '" + id + "';";
         con.prepareStatement(statement).executeUpdate();
+    }
+
+    public static boolean userHasCustomViews(String user) throws SQLException {
+        checkCon();
+        String statement = "select count(view) from custom_views where `user` = '" + user + "';";
+        ResultSet rs = con.prepareStatement(statement).executeQuery();
+        rs.next();
+        return rs.getInt(1) != 0;
+    }
+
+    public static void createCustomView(String user, String viewname) throws SQLException {
+        checkCon();
+        String statement = "INSERT INTO custom_views (`user`, `view`, `tabname`) VALUES ('" + user + "', '" + FileUtil.readFile("html/defaultView.html") + "', '" + viewname + "');";
+        con.prepareStatement(statement).executeUpdate();
+    }
+
+    public static ResultSet getCustomViews(String user) throws SQLException {
+        checkCon();
+        String statement = "SELECT view, tabname FROM custom_views where `user` = '" + user + "';";
+        return con.prepareStatement(statement).executeQuery();
+    }
+
+    public static boolean userHasCustomView(String user, String view) throws SQLException {
+        checkCon();
+        String statement = "SELECT count(view) from custom_views where `user` = '" + user + "' and `tabname` = '" + view + "';";
+        ResultSet rs = con.prepareStatement(statement).executeQuery();
+        rs.next();
+        return rs.getInt(1) != 0;
     }
 }

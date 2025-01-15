@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         new Webserver();
-        //TODO: layouts für fight etc., layout editor
+        //TODO: layout editor
         Mysql.createMysql();
     }
 

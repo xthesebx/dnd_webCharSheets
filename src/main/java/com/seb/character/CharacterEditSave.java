@@ -12,6 +12,6 @@ public class CharacterEditSave extends JavalinAuthPage {
         super(ctx);
         if (cancel) return;
         Mysql.editCharacter(ctx.pathParam("id"), ctx.formParamMap());
-        ctx.redirect("/charsheet/" + ctx.pathParam("id"));
+        ctx.redirect("/charsheet/" + ctx.pathParam("id") + "?tab=" + ctx.formParam("tab"));
     }
 }

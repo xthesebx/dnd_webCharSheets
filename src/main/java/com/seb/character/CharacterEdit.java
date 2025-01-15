@@ -56,6 +56,8 @@ public class CharacterEdit extends JavalinAuthPage {
         while (spells.next()) {
             spellOptions.append("<tr><td><input type='checkbox' class='schema' name=\"spells\" value=\"").append(spells.getString("id")).append("\" ").append(spellList.contains(spells.getString("name")) ? "checked" : "").append(">").append(spells.getString("name"));
         }
+        html = html.replace("<input type=\"hidden\" name=\"tab\" value=\"view\">", "<input type=\"hidden\" name=\"tab\" value=\"" + ctx.queryParam("tab") + "\">");
+        html = html.replace("<button onclick=\"window.location = '/charsheet/" + ctx.pathParam("id") + "?tab=view'\" class=\"scheme\">back</button>", "<button onclick=\"window.location = '/charsheet/" + ctx.pathParam("id") + "?tab=" + ctx.queryParam("tab") + "'\" class=\"scheme\">back</button>");
         html = html.replace("<!-- SPELLOPTIONS -->", spellOptions.toString());
         ctx.html(html);
     }

@@ -14,6 +14,7 @@ import com.seb.spellsAndWeapons.AddSpell;
 import com.seb.spellsAndWeapons.AddWeapon;
 import com.seb.spellsAndWeapons.SpellAdd;
 import com.seb.spellsAndWeapons.WeaponAdd;
+import com.seb.views.NewView;
 import io.javalin.Javalin;
 import io.javalin.util.FileUtil;
 
@@ -40,12 +41,11 @@ public class Webserver {
         javalin.get("/blank", ctx -> ctx.html(FileUtil.readFile("html/blankChar.html")));
         javalin.get("/editable", ctx -> ctx.html(FileUtil.readFile("html/editableChar.html")));
         javalin.get("/charsheet/<id>", CharView::new);
-        javalin.get("/play/<id>", CharPlayView::new);
         javalin.get("/edit/<id>", CharacterEdit::new);
         javalin.get("/weaponAdd", WeaponAdd::new);
         javalin.get("/spellAdd", SpellAdd::new);
         javalin.get("/style.css", ctx -> ctx.html(FileUtil.readFile("html/style.css")));
-
+        javalin.get("/newTab", NewView::new);
         javalin.get("/delete/<id>", CharacterDelete::new);
     }
 }

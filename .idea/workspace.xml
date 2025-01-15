@@ -9,19 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="refactoring">
-      <change afterPath="$PROJECT_DIR$/html/playView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharPlayView.java" afterDir="false" />
+    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="some refactoring, relayouting and added a play-view taht only allows editing of usual stuff">
+      <change afterPath="$PROJECT_DIR$/html/defaultView.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/seb/views/NewView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/createChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/createChar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/editChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/editChar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/spellAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/spellAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/playView.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/html/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/viewChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/viewChar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Webserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Webserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharPlayView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharacterEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharacterEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharacterEditSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharacterEditSave.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +32,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -68,6 +70,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.pdf.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -311,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736973393140</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="some refactoring, relayouting and added a play-view taht only allows editing of usual stuff">
+      <option name="closed" value="true" />
+      <created>1736977217703</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1736977217703</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,6 +370,7 @@
     <MESSAGE value="change some views, make armor class manually editable" />
     <MESSAGE value="fix character creator, name in view" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="some refactoring, relayouting and added a play-view taht only allows editing of usual stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="some refactoring, relayouting and added a play-view taht only allows editing of usual stuff" />
   </component>
 </project>
