@@ -19,7 +19,7 @@ public class JavalinLoggedInPage extends JavalinPage {
     public JavalinLoggedInPage(Context ctx) throws NoSuchAlgorithmException, SQLException {
         super(ctx);
         if (!Main.isLoggedIn(ctx.cookie("JSESSIONID"))) {
-            Logger.error(ctx.ip());
+            Logger.error(ctx.host());
             if (ctx.ip().equals("127.0.0.1")) {
                 JSONObject logindata = new JSONObject();
                 /*try {
