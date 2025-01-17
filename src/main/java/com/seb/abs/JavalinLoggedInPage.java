@@ -19,6 +19,7 @@ public class JavalinLoggedInPage extends JavalinPage {
     protected boolean cancel = false;
     public JavalinLoggedInPage(Context ctx) throws NoSuchAlgorithmException, SQLException {
         super(ctx);
+        ctx.sessionAttributeMap();
         if (!Main.isLoggedIn(ctx.cookie("JSESSIONID"))) {
             URL path = Main.class.getResource("Main.class");
             if (path != null && path.toString().startsWith("file")) {
@@ -43,7 +44,11 @@ public class JavalinLoggedInPage extends JavalinPage {
                 JSONObject sessionobject = new JSONObject().put("loginstatus", ls);
                 if (ls.equals(LoginStatus.SUCCESS))
                     sessionobject.put("user", username).put("timestamp", System.currentTimeMillis() + 900000);
-                Main.sessionUserTimer.put(sessionid, sessionobject);
+                try {
+                    Main.sessionUserTimer.put(sessionid, sessionobject);
+                } catch (NullPointerException e) {
+                    ctx.redirect("/");
+                }
                 return;
             }
             ctx.redirect("/login");

@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Mysql {
@@ -143,6 +144,7 @@ public class Mysql {
         StringBuilder statement = new StringBuilder("UPDATE dnd.characters SET ");
         AtomicInteger i = new AtomicInteger();
         ArrayList<String> übungslist = new ArrayList<>();
+        AtomicBoolean fullEdit = new AtomicBoolean(false);
         übungslist.add("strretü");
         übungslist.add("gesretü");
         übungslist.add("konretü");
@@ -174,6 +176,10 @@ public class Mysql {
             if (key.contains("weapon")) return;
             if (key.contains("spells")) return;
             if (key.equals("tab")) return;
+            if (key.equals("editmode")) {
+                fullEdit.set(true);
+                return;
+            }
             if (value.get(0).equals("null")) return;
             String s = value.get(0);
             if (key.endsWith("ü")) {
@@ -183,31 +189,33 @@ public class Mysql {
             statement.append(key).append(" = '").append(s).append("', ");
             i.getAndIncrement();
         });
-        übungslist.forEach(value -> {
-            statement.append(value).append(" = '").append("0").append("', ");
-        });
+        if (fullEdit.get()) {
+            übungslist.forEach(value -> {
+                statement.append(value).append(" = '").append("0").append("', ");
+            });
+            con.prepareStatement("DELETE FROM waffen_character WHERE `character` = " + characterId).executeUpdate();
+            if (stringListMap.get("weapons") != null)
+                stringListMap.get("weapons").forEach(value -> {
+                    try {
+                        con.prepareStatement("INSERT INTO waffen_character (`waffe`, `character`) VALUES ('" + value + "', '" + characterId + "');").executeUpdate();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+            con.prepareStatement("DELETE FROM char_spells WHERE `character` = " + characterId).executeUpdate();
+            if (stringListMap.get("spells") != null)
+                stringListMap.get("spells").forEach(value -> {
+                    try {
+                        con.prepareStatement("INSERT INTO char_spells (`spell`, `character`) VALUES ('" + value + "', '" + characterId + "');").executeUpdate();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+        }
         if (i.get() == 0) return;
         statement.delete(statement.length() - 2, statement.length());
         statement.append(" WHERE id = '" + characterId + "';");
         con.prepareStatement(statement.toString()).executeUpdate();
-        con.prepareStatement("DELETE FROM waffen_character WHERE `character` = " + characterId).executeUpdate();
-        if (stringListMap.get("weapons") != null)
-            stringListMap.get("weapons").forEach(value -> {
-                try {
-                    con.prepareStatement("INSERT INTO waffen_character (`waffe`, `character`) VALUES ('" + value + "', '" + characterId + "');").executeUpdate();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-        con.prepareStatement("DELETE FROM char_spells WHERE `character` = " + characterId).executeUpdate();
-        if (stringListMap.get("spells") != null)
-            stringListMap.get("spells").forEach(value -> {
-                try {
-                    con.prepareStatement("INSERT INTO char_spells (`spell`, `character`) VALUES ('" + value + "', '" + characterId + "');").executeUpdate();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            });
     }
 
     public static ResultSet getCharWeapons(String characterId) throws SQLException {
