@@ -32,7 +32,7 @@ public class CharView extends JavalinAuthPage {
             URL path = Main.class.getResource("Main.class");
             if (path != null && path.toString().startsWith("file"))
                 s = s.replace("$SHARELINK", "http://" + ctx.host() + "/share/" + rs.getString(1));
-            else s = s.replace("$SHARELINK", "https://" + ctx.host() + "/share/" + rs.getString(1));
+            else s = s.replace("$SHARELINK", "https://dndchars.sebgameservers.de/share/" + rs.getString(1));
         } else s = s.replace("$SHARELINK", "");
         String first = firstDiv(s.substring(0, s.indexOf("<div id=\"Play-View")));
 
