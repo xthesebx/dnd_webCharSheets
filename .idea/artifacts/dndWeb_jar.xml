@@ -37,6 +37,8 @@
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/waffle/waffle-jna/3.3.0/waffle-jna-3.3.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.9.25/kotlin-stdlib-1.9.25.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-text/1.13.0/commons-text-1.13.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
