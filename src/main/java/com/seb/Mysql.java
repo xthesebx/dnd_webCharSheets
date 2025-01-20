@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -325,5 +326,49 @@ public class Mysql {
         return escapeStringForMySQL(s)
                 .replace("%", "\\%")
                 .replace("_","\\_");
+    }
+
+    public static void addShare(String charId) throws SQLException {
+        checkCon();
+        if (charHasShare(charId)) {
+            return;
+        }
+        String uuid = UUID.randomUUID().toString();
+        while (hasUUID(uuid)) {
+            uuid = UUID.randomUUID().toString();
+        }
+        con.prepareStatement("INSERT INTO shares(`UUID`, `character`) VALUES ('" + escapeWildcardsForMySQL(uuid) + "', '" + escapeWildcardsForMySQL(charId) + "');").executeUpdate();
+    }
+
+    private static boolean hasUUID(String uuid) throws SQLException {
+        checkCon();
+        ResultSet rs = con.prepareStatement("SELECT count(UUID) from shares where `UUID` = '" + escapeWildcardsForMySQL(uuid) + "';").executeQuery();
+        rs.next();
+        return rs.getInt(1) > 0;
+    }
+
+    public static ResultSet getShareChar(String uuid) throws SQLException {
+        checkCon();
+        ResultSet rs = con.prepareStatement("SELECT `character` FROM shares WHERE `UUID` = '" + escapeWildcardsForMySQL(uuid) + "';").executeQuery();
+        if (rs.next()) {
+            return charDetails(rs.getString("character"));
+        } else return null;
+    }
+
+    public static boolean charHasShare(String charId) throws SQLException {
+        checkCon();
+        ResultSet rs = con.prepareStatement("SELECT COUNT(UUID) from shares where `character` = '" + escapeWildcardsForMySQL(charId) + "';").executeQuery();
+        rs.next();
+        return rs.getInt(1) > 0;
+    }
+
+    public static void deleteShare(String charid) throws SQLException {
+        checkCon();
+        con.prepareStatement("DELETE from shares where `character` = '" + escapeWildcardsForMySQL(charid) + "';").executeUpdate();
+    }
+
+    public static ResultSet getShare(String charId) throws SQLException {
+        checkCon();
+        return con.prepareStatement("SELECT UUID FROM shares where `character` = '" + escapeWildcardsForMySQL(charId) + "';").executeQuery();
     }
 }

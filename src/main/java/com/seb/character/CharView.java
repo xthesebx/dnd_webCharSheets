@@ -1,11 +1,13 @@
 package com.seb.character;
 
+import com.seb.Main;
 import com.seb.Mysql;
 import com.seb.abs.JavalinAuthPage;
 import io.javalin.http.Context;
 import io.javalin.util.FileUtil;
 import org.apache.commons.text.StringEscapeUtils;
 
+import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -21,6 +23,17 @@ public class CharView extends JavalinAuthPage {
         if (cancel) return;
         id = ctx.pathParam("id");
         String s = FileUtil.readFile("html/viewChar.html");
+        if (Mysql.charHasShare(id)) {
+            ResultSet rs = Mysql.getShare(id);
+            rs.next();
+            s = s.replace("document.getElementById(\"shareForm\").setAttribute(\"action\", \"/share/$ID?tab=\" + tabName);", "document.getElementById(\"shareForm\").setAttribute(\"action\", \"/delshare/$ID?tab=\" + tabName);")
+                    .replace("<form id=\"shareForm\" name=\"shareForm\" action=\"/share/$ID\" method=\"post\">", "<form id=\"shareForm\" name=\"shareForm\" action=\"/delshare/$ID\" method=\"post\">")
+                    .replace("<button type=\"submit\" form=\"shareForm\" name=\"share\" value=\"Share\" class=\"submit\">Share</button>", "<button type=\"submit\" form=\"shareForm\" name=\"share\" value=\"Share\" class=\"submit\">Delete Share</button>");
+            URL path = Main.class.getResource("Main.class");
+            if (path != null && path.toString().startsWith("file"))
+                s = s.replace("$SHARELINK", "http://" + ctx.host() + "/share/" + rs.getString(1));
+            else s = s.replace("$SHARELINK", "https://" + ctx.host() + "/share/" + rs.getString(1));
+        } else s = s.replace("$SHARELINK", "");
         String first = firstDiv(s.substring(0, s.indexOf("<div id=\"Play-View")));
 
 
@@ -165,14 +178,14 @@ public class CharView extends JavalinAuthPage {
                 .replace("$PASSIVE", skillÜbung[16] ? String.valueOf(weis + übungsbonus + 10) : String.valueOf(weis + 10))
                 .replace("$ID", id)
                 .replace("$WAFFEN", waffen.toString())
-                .replace("Erfolge [0]", "Erfolge [0][0][0]")
-                .replace("Fehlschläge [0]", "Fehlschläge [0][0][0]")
-                .replace("Erfolge [1]", "Erfolge [1][0][0]")
-                .replace("Fehlschläge [1]", "Fehlschläge [1][0][0]")
-                .replace("Erfolge [2]", "Erfolge [1][1][0]")
-                .replace("Fehlschläge [2]", "Fehlschläge [1][1][0]")
-                .replace("Erfolge [3]", "Erfolge [1][1][1]")
-                .replace("Fehlschläge [3]", "Fehlschläge [1][1][1]")
+                .replace("Erfolge</span>[0]", "Erfolge</span>[0][0][0]")
+                .replace("Fehlschläge</span>[0]", "Fehlschläge</span>[0][0][0]")
+                .replace("Erfolge</span>[1]", "Erfolge</span>[1][0][0]")
+                .replace("Fehlschläge</span>[1]", "Fehlschläge</span>[1][0][0]")
+                .replace("Erfolge</span>[2]", "Erfolge</span>[1][1][0]")
+                .replace("Fehlschläge</span>[2]", "Fehlschläge</span>[1][1][0]")
+                .replace("Erfolge</span>[3]", "Erfolge</span>[1][1][1]")
+                .replace("Fehlschläge</span>[3]", "Fehlschläge</span>[1][1][1]")
                 .replace("[0]", "<input type=\"checkbox\" disabled/>")
                 .replace("[1]", "<input type=\"checkbox\" disabled checked/>")
                 //.replaceFirst("\\$CLASS", charClass)
@@ -235,7 +248,6 @@ public class CharView extends JavalinAuthPage {
             }
             if (rsmd.getColumnName(i).equals("story")) {
                 if (rs.getString(i) == null) {
-
                     html = html.replaceFirst("\\$STORY", "");
                 } else
                     html = html.replaceFirst("\\$STORY", StringEscapeUtils.unescapeHtml4(rs.getString(i)));
@@ -332,14 +344,14 @@ public class CharView extends JavalinAuthPage {
                 .replace("$PASSIVE", skillÜbung[16] ? String.valueOf(weis + übungsbonus + 10) : String.valueOf(weis + 10))
                 .replace("$ID", id)
                 .replace("$WAFFEN", waffen.toString())
-                .replace("Erfolge [0]", "Erfolge [0][0][0]")
-                .replace("Fehlschläge [0]", "Fehlschläge [0][0][0]")
-                .replace("Erfolge [1]", "Erfolge [1][0][0]")
-                .replace("Fehlschläge [1]", "Fehlschläge [1][0][0]")
-                .replace("Erfolge [2]", "Erfolge [1][1][0]")
-                .replace("Fehlschläge [2]", "Fehlschläge [1][1][0]")
-                .replace("Erfolge [3]", "Erfolge [1][1][1]")
-                .replace("Fehlschläge [3]", "Fehlschläge [1][1][1]")
+                .replace("Erfolge</span>[0]", "Erfolge</span>[0][0][0]")
+                .replace("Fehlschläge</span>[0]", "Fehlschläge</span>[0][0][0]")
+                .replace("Erfolge</span>[1]", "Erfolge</span>[1][0][0]")
+                .replace("Fehlschläge</span>[1]", "Fehlschläge</span>[1][0][0]")
+                .replace("Erfolge</span>[2]", "Erfolge</span>[1][1][0]")
+                .replace("Fehlschläge</span>[2]", "Fehlschläge</span>[1][1][0]")
+                .replace("Erfolge</span>[3]", "Erfolge</span>[1][1][1]")
+                .replace("Fehlschläge</span>[3]", "Fehlschläge</span>[1][1][1]")
                 .replace("[0]", "<input type=\"checkbox\" disabled/>")
                 .replace("[1]", "<input type=\"checkbox\" disabled checked/>")
                 //.replaceFirst("\\$CLASS", charClass)

@@ -1,634 +1,602 @@
-<div id="$TABNAME" class="tabcontent">
-  <table>
-    <tr>
-      <td>
-        <table>
-          <tr>
-            <td>
-              <table>
-                <tr>
-                  <td>
-                    <table>
-                      <tr>
-                        <td class="tablerow">Name: $NAME</td>
-                        <td class="tablerow">
-                          <table>
-                            <tbody>
-                            <tr>
-                              <td>
-                                Klasse &amp; Stufe: $CLASS $LEVEL
-                              </td>
-                              <td>
-                                Hintergrund: $BACKGROUND
-                              </td>
-                              <td>
-                                Spielername: $PLAYERNAME
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                Volk: $RACE
-                              </td>
-                              <td>
-                                Gesinnung: $ALIGNMENT
-                              </td>
-                              <td>
-                                Exp: $EXP
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                </tbody></table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table>
-                <tr>
-                  <td>
-                    <table>
-                      <tbody>
-                      <tr>
-                        <td>
-                          <table>
-                            <tbody>
-                            <tr>
-                              <td>
-                                <table>
-                                  <tbody>
-                                  <tr>
-                                    <td class="tablerow" style="text-align: center">
-                                      Stärke<br>$STR<br>$STRM
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td class="tablerow" style="text-align: center">
-                                      Geschicklichkeit<br>$GES<br>$GESM
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td class="tablerow" style="text-align: center">
-                                      Konstitution<br>$KON<br>$KONM
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td class="tablerow" style="text-align: center">
-                                      Intelligenz<br>$INTELLIGENZ<br>$INTM
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td class="tablerow" style="text-align: center">
-                                      Weisheit<br>$WEIS<br>$WEISM
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td class="tablerow" style="text-align: center">
-                                      Charisma<br>$CHA<br>$CHAM
-                                    </td>
-                                  </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td>
-                                <table>
-                                  <tbody>
-                                  <tr>
-                                    <td>
-                                      <table style="width: 100%">
-                                        <tr>
-                                          <td class="tablerow" style="text-align: center">
-                                            $INSPIRATION
-                                          </td>
-                                          <td class="tablerow" style="text-align: center">
-                                            Inspiration
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td class="tablerow" style="text-align: center">
-                                            $ÜBUNGSBONUS
-                                          </td>
-                                          <td class="tablerow" style="text-align: center">
-                                            Übungsbonus
-                                          </td>
-                                        </tr>
-                                      </table>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <table class="tablerow tablefill">
-                                        <tbody>
-                                        <tr>
-                                          <td>[$STRRETÜ] $STRRET Stärke</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$GESRETÜ] $GESRET
-                                            Geschicklichkeit
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$KONRETÜ] $KONRET Konstitution</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$INTRETÜ] $INTRET Intelligenz</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$WEISRETÜ] $WEISRET Weisheit</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$CHARETÜ] $CHARET Charisma</td>
-                                        </tr>
-                                        <tr>
-                                          <td style="text-align: center">
-                                            Rettungswürfe
-                                          </td>
-                                        </tr>
-                                        </tbody>
-                                      </table>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <table class="tablerow">
-                                        <tbody>
-                                        <tr>
-                                          <td>[$AKROBATIKÜ] $AKROBATIK Akrobatik
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$ARKANEÜ] $ARKANE Arkane Kunde</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$ATHLETIKÜ] $ATHLETIK Athletik</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$AUFTRETENÜ] $AUFTRETEN Auftreten
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$EINSCHÜCHTERNÜ] $EINSCH
-                                            Einschüchtern
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$FINGERFERTIGKEITÜ] $FF
-                                            Fingerfertigkeit
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$GESCHICHTEÜ] $GESCHICHTE
-                                            Geschichte
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$HEIMLICHKEITÜ] $HEIMLICH
-                                            Heimlichkeit
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$MEDIZINÜ] $MEDIZIN Medizin</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$TIEREÜ] $TIERE Mit Tieren
-                                            umgehen
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$MOTIVÜ] $MOTIV Motiv erkennen</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$NACHFORSCHUNGENÜ] $NACH
-                                            Nachforschungen
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$NATURÜ] $NATUR Natur</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$RELIGIONÜ] $RELI Religion</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$TÄUSCHENÜ] $TÄUSCHEN Täuschen</td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$ÜBERZEUGENÜ] $ÜBERZEUGEN
-                                            Überzeugen
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$WAHRNEHMUNGÜ] $WAHRNEHMUNG
-                                            Wahrnehmung
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>[$ÜBERLEBENÜ] $ÜBERLEBEN Überleben
-                                          </td>
-                                        </tr>
-                                        </tbody>
-                                      </table>
-                                    </td>
-                                  </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <table style="width: 100%;">
-                            <tr>
-                              <td class="tablerow" style="text-align: center">$PASSIVE</td>
-                              <td class="tablerow" style="text-align: center"> Passive
-                                Wahrnehmung
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="tablerow" style="max-width: 100px">
-                          $ÜBUNGEN<br>
-                          <div style="text-align: center">Weitere Übungen und Sprachen</div>
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                  <td>
-                    <table>
-                      <tbody>
-                      <tr>
-                        <td>
-                          <table>
-                            <tbody>
-                            <tr>
-                              <td class="tablerow" style="text-align: center">$RÜSTUNGSKLASSE
-                                <br/>Rüstungsklasse
-                              </td>
-                              <td class="tablerow" style="text-align: center">$INITIATIVE<br/>Initiative
-                              </td>
-                              <td class="tablerow" style="text-align: center">$BEWEGUNG<br/>Bewegungsrate
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="tablerow">Trefferpunkte Maximum $MAXHP<br>$HP<br>
-                          <div style="text-align: center">Aktuelle Trefferpunkte</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="tablerow">$TEMPHP<br/>
-                          <div style="text-align: center">Temporäre Trefferpunkte</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="width: 100%">
-                          <table style="width: 100%">
-                            <tbody style="width: 100%">
-                            <tr style="width: 100%">
-                              <td style="width: 50%" class="tablerow">Gesamt: $TREFFERWÜRFELMAX<br>$TREFFERWÜRFEL<br>
-                                <div style="text-align: center">Trefferwürfel</div>
-                              </td>
-                              <td style="width: 50%" class="tablerow">Erfolge [$DEATHSAVESUC]<br>
-                                Fehlschläge [$DEATHSAVEFAIL]<br>
-                                <div style="text-align: center">Todesrettungswürfe</div>
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="tablerow">
-                          <table>
-                            <tbody>
-                            <tr>
-                              <td>Name</td>
-                              <td>Bonus</td>
-                              <td>Schaden/Art</td>
-                            </tr>
-                            <tr><td>$WAFFEN</td></tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="tablerow">
-                          <table style="width: 100%">
-                            <tr>
-                              <td>$INVENTORY</td>
-                            </tr>
-                            <tr>
-                              <td>KM: $KUPFERMÜNZEN</td>
-                            </tr>
-                            <tr>
-                              <td>SM: $SILBERMÜNZEN</td>
-                            </tr>
-                            <tr>
-                              <td>EM: $ELEKTRUMMÜNZEN</td>
-                            </tr>
-                            <tr>
-                              <td>GM: $GOLDMÜNZEN</td>
-                            </tr>
-                            <tr>
-                              <td>PM: $PLATINMÜNZEN</td>
-                            </tr>
-                            <tr>
-                              <td style="text-align: center">Inventory</td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </td>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$NAME</title>
+  <script>
+    function openTab(evt, tabName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
 
-                  <td>
-                    <table>
-                      <tbody>
-                      <tr>
-                        <td class="tablerow">
-                          $PERSÖNLICHKEIT<br>
-                          <div style="text-align: center">Persönlichkeitsmerkmale</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="tablerow">
-                          $IDEALE<br>
-                          <div style="text-align: center">Ideale</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="tablerow">
-                          $BINDUNGEN<br>
-                          <div style="text-align: center">Bindungen</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="tablerow">
-                          $MAKEL<br>
-                          <div style="text-align: center">Makel</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="tablerow">
-                          $MERKMALE
-                          <br>
-                          <div style="text-align: center">Merkmale</div>
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                </tbody></table>
-            </td>
-          </tr>
-        </table>
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
 
-      <td id="spellTable">
-        <table>
-          <tr>
-            <td>
-              <table class="tablefill">
-                <tr>
-                  <td>
-                    <table class="tablefill">
-                      <tr>
-                        <td class="tablerow">$CLASS</td>
-                        <td class="tablerow">$CLASSSPELL</td>
-                        <td class="tablerow">$SPELLSAVE</td>
-                        <td class="tablerow">$SPELLBONUS</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <table>
-                <tr>
-                  <td>
-                    <table>
-                      <tr>
-                        <td>
-                          <table class="tablefill tablerow spell0" style="display: none">
-                            <tr>
-                              <td>
-                                <table>
-                                  <tr>
-                                    <td class="tablerow">
-                                      0
-                                    </td>
-                                    <td class="tablerow">
-                                      Zaubertricks
-                                    </td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="width: 100%">
-                                <table style="width: 100%">
-                                  <tr style="width: 100%">
-                                    $SPELLLIST0
-                                </table>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <table class="tablefill tablerow spell1" style="display: none" >
-                            <tr>
-                              <td style="width: 100%">
-                                <table style="width: 100%">
-                                  <tr style="width: 100%">
-                                    <td class="tablerow">1</td>
-                                    <td class="tablerow">$SPELL1COUNT</td>
-                                    <td class="tablerow">$SPELL1USED</td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <table>
-                                  $SPELLLIST1
-                                </table>
-                              </td>
-                            </tr>
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
 
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <table class="tablefill tablerow spell2" style="display: none">
-                            <tr>
-                              <td style="width: 100%">
-                                <table style="width: 100%">
-                                  <tr style="width: 100%">
-                                    <td class="tablerow">2</td>
-                                    <td class="tablerow">$SPELL2COUNT</td>
-                                    <td class="tablerow">$SPELL2USED</td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <table>
-                                  $SPELLLIST2
-                                </table>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                  <td>
-                    <table class="tablefill tablerow spell3" style="display: none">
-                      <tr>
-                        <td style="width: 100%">
-                          <table style="width: 100%">
-                            <tr style="width: 100%">
-                              <td class="tablerow">3</td>
-                              <td class="tablerow">$SPELL3COUNT</td>
-                              <td class="tablerow">$SPELL3USED</td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <table>$SPELLLIST3</table>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="tablefill tablerow spell4" style="display: none">
-                      <tr>
-                        <td style="width: 100%">
-                          <table style="width: 100%">
-                            <tr style="width: 100%">
-                              <td class="tablerow">4</td>
-                              <td class="tablerow">$SPELL4COUT</td>
-                              <td class="tablerow">$SPELL4USED</td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <table>$SPELLLIST4</table>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="tablefill tablerow spell5" style="display: none">
-                      <tr>
-                        <td style="width: 100%">
-                          <table style="width: 100%">
-                            <tr style="width: 100%">
-                              <td class="tablerow">5</td>
-                              <td class="tablerow">$SPELL5COUNT</td>
-                              <td class="tablerow">$SPELL5USED</td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <table>$SPELLLIST5</table>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-            <td>
-              <table>
-                <tr>
-                  <td>
-                    <table class="tablefill tablerow spell6" style="display: none">
-                      <tr>
-                        <td style="width: 100%">
-                          <table style="width: 100%">
-                            <tr style="width: 100%">
-                              <td class="tablerow">6</td>
-                              <td class="tablerow">$SPELL6COUNT</td>
-                              <td class="tablerow">$SPELL6USED</td>
-                            </tr>
-                          </table>
-                          <table>$SPELLLIST6</table>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="tablefill tablerow spell7" style="display: none">
-                      <tr>
-                        <td style="width: 100%">
-                          <table style="width: 100%">
-                            <tr style="width: 100%">
-                              <td class="tablerow">7</td>
-                              <td class="tablerow">$SPELL7COUNT</td>
-                              <td class="tablerow">$SPELL7USED</td>
-                            </tr>
-                          </table>
-                          <table>$SPELLLIST7</table>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="tablefill tablerow spell8" style="display: none">
-                      <tr>
-                        <td style="width: 100%">
-                          <table style="width: 100%">
-                            <tr style="width: 100%">
-                              <td class="tablerow">8</td>
-                              <td class="tablerow">$SPELL8COUNT</td>
-                              <td class="tablerow">$SPELL8USED</td>
-                            </tr>
-                          </table>
-                          <table>$SPELLLIST8</table>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="tablerow spell9" style="display: none">
-                      <tr>
-                        <td style="width: 100%">
-                          <table style="width: 100%">
-                            <tr style="width: 100%">
-                              <td class="tablerow">9</td>
-                              <td class="tablerow">$SPELL9COUNT</td>
-                              <td class="tablerow">$SPELL9USED</td>
-                            </tr>
-                          </table>
-                          <table>$SPELLLIST9</table>
-                        </td>
-                      </tr>
-                    </table>
-
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+</head>
+<body>
+<div class="tab">
+  <button onclick="openTab(event, 'Default-View')" id="defaultOpen" class="tablinks scheme">Default-View</button>
+  <button onclick="openTab(event, 'Backstory')" class="tablinks scheme">Backstory</button>
 </div>
+
+<div id="Default-View" class="tabcontent">
+  <div class="row">
+    <div class="col-sm-4 tablerow">Name: $NAME</div>
+    <div class="col tablerow">
+      <div class="row">
+        <div class="col">Klasse &amp; Stufe: $CLASS $LEVEL</div>
+        <div class="col">Hintergrund: $BACKGROUND</div>
+        <div class="col">Spielername: $PLAYERNAME</div>
+      </div>
+      <div class="row">
+        <div class="col">Volk: $RACE</div>
+        <div class="col">Gesinnung: $ALIGNMENT</div>
+        <div class="col">Exp: $EXP</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="col" style="text-align: center;">
+            <div class="row tablerow">
+              <div class="col">
+                Stärke<br>$STR<br>$STRM
+              </div>
+            </div>
+            <div class="row tablerow">
+              <div class="col">
+                Geschicklichkeit<br>$GES<br>$GESM
+              </div>
+            </div>
+            <div class="row tablerow">
+              <div class="col">
+                Konstitution<br>$KON<br>$KONM
+              </div>
+            </div>
+            <div class="row tablerow">
+              <div class="col">
+                Intelligenz<br>$INTELLIGENZ<br>$INTM
+              </div>
+            </div>
+            <div class="row tablerow">
+              <div class="col">
+                Weisheit<br>$WEIS<br>$WEISM
+              </div>
+            </div>
+            <div class="row tablerow">
+              <div class="col">
+                Charisma<br>$CHA<br>$CHAM
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row tablerow">
+              <div class="col-sm-12">
+                $INSPIRATION Inspiration
+              </div>
+            </div>
+            <div class="row tablerow">
+              <div class="col-sm-12">$ÜBUNGSBONUS Übungsbonus</div>
+            </div>
+            <div class="row tablerow">
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm-12">
+                    [$STRRETÜ] $STRRET Stärke
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    [$GESRETÜ] $GESRET
+                    Geschicklichkeit
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    [$KONRETÜ] $KONRET
+                    Konstitution
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    [$INTRETÜ] $INTRET Intelligenz
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    [$WEISRETÜ] $WEISRET Weisheit
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    [$CHARETÜ] $CHARET Charisma
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 subtext">
+                    Rettungswürfe
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row tablerow">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    [$AKROBATIKÜ] $AKROBATIK
+                    Akrobatik
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$ARKANEÜ] $ARKANE Arkane
+                    Kunde
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$ATHLETIKÜ] $ATHLETIK
+                    Athletik
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$AUFTRETENÜ] $AUFTRETEN
+                    Auftreten
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$EINSCHÜCHTERNÜ] $EINSCH
+                    Einschüchtern
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$FINGERFERTIGKEITÜ] $FF
+                    Fingerfertigkeit
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$GESCHICHTEÜ] $GESCHICHTE
+                    Geschichte
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$HEIMLICHKEITÜ] $HEIMLICH
+                    Heimlichkeit
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$MEDIZINÜ] $MEDIZIN Medizin
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$TIEREÜ] $TIERE Mit Tieren
+                    umgehen
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$MOTIVÜ] $MOTIV Motiv
+                    erkennen
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$NACHFORSCHUNGENÜ] $NACH
+                    Nachforschungen
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$NATURÜ] $NATUR Natur
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$RELIGIONÜ] $RELI Religion
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$TÄUSCHENÜ] $TÄUSCHEN
+                    Täuschen
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$ÜBERZEUGENÜ] $ÜBERZEUGEN
+                    Überzeugen
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$WAHRNEHMUNGÜ] $WAHRNEHMUNG
+                    Wahrnehmung
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    [$ÜBERLEBENÜ] $ÜBERLEBEN
+                    Überleben
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col subtext">
+                    Fertigkeiten
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row tablerow">
+          <div class="col">
+            $PASSIVE Passive Wahrnehmung
+          </div>
+        </div>
+        <div class="row tablerow">
+          <div class="col">
+            $ÜBUNGEN<div class="subtext">Weitere Übungen und Sprachen</div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col tablerow" style="text-align: center">
+            $RÜSTUNGSKLASSE
+            <div class="subtext">Rüstungsklasse</div>
+          </div>
+          <div class="col tablerow" style="text-align: center;">
+            $INITIATIVE<div class="subtext">Initiative</div>
+          </div>
+          <div class="col tablerow" style="text-align: center">
+            $BEWEGUNG<div class="subtext">Bewegungsrate</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col tablerow" style="text-align: center">
+            <span class="subtext">Trefferpunkte Maximum:</span> $MAXHP<br>$HP<br>
+            <div style="text-align: center" class="subtext">Aktuelle Trefferpunkte</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col tablerow">$TEMPHP<br/>
+            <div style="text-align: center" class="subtext">Temporäre Trefferpunkte</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col tablerow" style="text-align: center"><span class="subtext">Gesamt:</span>
+            $TREFFERWÜRFELMAX<br>$TREFFERWÜRFEL<br>
+            <div style="text-align: center" class="subtext">Trefferwürfel</div>
+          </div>
+          <div class="col tablerow">
+            <span class="subtext">Erfolge</span>[$DEATHSAVESUC]<br>
+            <span class="subtext">Fehlschläge</span>[$DEATHSAVEFAIL]<br>
+            <div style="text-align: center" class="subtext">Todesrettungswürfe</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col tablerow">
+            <table id="weapontableview" style="width: 250px" class="table-dark">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Bonus</th>
+                <th>Schaden/Art</th>
+              </tr>
+              </thead>
+              <tbody>
+              $WAFFEN
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col tablerow">
+            <table style="width: 100%" class="table-dark">
+              <tr>
+                <td>$INVENTORY</td>
+              </tr>
+              <tr>
+                <td>KM: $KUPFERMÜNZEN</td>
+              </tr>
+              <tr>
+                <td>SM: $SILBERMÜNZEN</td>
+              </tr>
+              <tr>
+                <td>EM: $ELEKTRUMMÜNZEN</td>
+              </tr>
+              <tr>
+                <td>GM: $GOLDMÜNZEN</td>
+              </tr>
+              <tr>
+                <td>PM: $PLATINMÜNZEN</td>
+              </tr>
+              <tr>
+                <td style="text-align: center" class="subtext">Inventory</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col tablerow">
+            $PERSÖNLICHKEIT<br>
+            <div style="text-align: center" class="subtext">Persönlichkeitsmerkmale</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col tablerow">
+            $IDEALE<br>
+            <div style="text-align: center" class="subtext">Ideale</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col tablerow">
+            $BINDUNGEN<br>
+            <div style="text-align: center" class="subtext">Bindungen</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col tablerow">
+            $MAKEL<br>
+            <div style="text-align: center" class="subtext">Makel</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col tablerow">
+            $MERKMALE
+            <br>
+            <div style="text-align: center" class="subtext">Merkmale</div>
+          </div>
+        </div>
+      </div>
+      <div class="col" id="spelltable">
+        <div class="row">
+          <div class="col tablerow">
+            $CLASS
+          </div>
+          <div class="col tablerow">
+            $CLASSSPELL
+          </div>
+          <div class="col tablerow">
+            $SPELLSAVE
+          </div>
+          <div class="col tablerow">
+            $SPELLBONUS
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell0" style="display: none">
+            <div class="row">
+              <div class="col-sm-1 tablerow">
+                0
+              </div>
+              <div class="col tablerow">
+                Zaubertricks
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">$SPELLLIST0</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell1" style="display: none">
+            <div class="row">
+              <div class="col tablerow">
+                1
+              </div>
+              <div class="col tablerow">
+                $SPELL1COUNT
+              </div>
+              <div class="col tablerow">
+                $SPELL1USED
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                $SPELLLIST1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell2" style="display: none">
+            <div class="row">
+              <div class="col tablerow">
+                2
+              </div>
+              <div class="col tablerow">
+                $SPELL2COUNT
+              </div>
+              <div class="col tablerow">
+                $SPELL2USED
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                $SPELLLIST2
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell3" style="display: none">
+            <div class="row">
+              <div class="col tablerow">
+                3
+              </div>
+              <div class="col tablerow">
+                $SPELL3COUNT
+              </div>
+              <div class="col tablerow">
+                $SPELL3USED
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                $SPELLLIST3
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell4" style="display: none">
+            <div class="row">
+              <div class="col tablerow">
+                4
+              </div>
+              <div class="col tablerow">
+                $SPELL4COUNT
+              </div>
+              <div class="col tablerow">
+                $SPELL4USED
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                $SPELLLIST4
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell5" style="display: none">
+            <div class="row">
+              <div class="col tablerow">
+                5
+              </div>
+              <div class="col tablerow">
+                $SPELL5COUNT
+              </div>
+              <div class="col tablerow">
+                $SPELL5USED
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                $SPELLLIST5
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell6" style="display: none">
+            <div class="row">
+              <div class="col tablerow">
+                6
+              </div>
+              <div class="col tablerow">
+                $SPELL6COUNT
+              </div>
+              <div class="col tablerow">
+                $SPELL6USED
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                $SPELLLIST6
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell7" style="display: none">
+            <div class="row">
+              <div class="col tablerow">
+                7
+              </div>
+              <div class="col tablerow">
+                $SPELL7COUNT
+              </div>
+              <div class="col tablerow">
+                $SPELL7USED
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                $SPELLLIST7
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell8" style="display: none">
+            <div class="row">
+              <div class="col tablerow">
+                8
+              </div>
+              <div class="col tablerow">
+                $SPELL8COUNT
+              </div>
+              <div class="col tablerow">
+                $SPELL8USED
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                $SPELLLIST8
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="spell9" style="display: none">
+            <div class="row">
+              <div class="col tablerow">
+                9
+              </div>
+              <div class="col tablerow">
+                $SPELL9COUNT
+              </div>
+              <div class="col tablerow">
+                $SPELL9USED
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                $SPELLLIST9
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="Backstory" class="tabcontent">
+  $STORY
+</div>
+<script>
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>

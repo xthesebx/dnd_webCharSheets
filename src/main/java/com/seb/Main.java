@@ -1,5 +1,6 @@
 package com.seb;
 
+import com.hawolt.logger.Logger;
 import com.seb.Login.LoginStatus;
 import org.json.JSONObject;
 
@@ -9,10 +10,14 @@ public class Main {
 
     public static JSONObject sessionUserTimer = new JSONObject();
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         new Webserver();
         //TODO: layout editor
-        Mysql.createMysql();
+        try {
+            Mysql.createMysql();
+        } catch (SQLException e) {
+            Logger.error(e);
+        }
     }
 
     public static boolean isLoggedIn(String sessionId) {

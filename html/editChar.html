@@ -4,6 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -85,583 +89,512 @@
 </div>
 <form method="post" action="/editchar/$ID" id="myform" name="form">
     <div id="view" class="tabcontent">
-        <table>
-            <tr>
-                <td>
-                    <table>
+        <div class="row">
+            <div class="col-sm-5 tablerow">
+                <input name="name" class="name inputfield"><br/>Charaktername</div>
+            <div class="col tablerow">
+                <div class="row">
+                    <div class="col">
+                        <input name="class" class="class inputfield"><input
+                            type="number" name="level"
+                            class="level inputfield numberfield"><br/>
+                        <div style="text-align: center"> Klasse &amp; Stufe
+                        </div>
+                    </div>
+                    <div class="col">
+                        <input name="background"
+                               class="background inputfield">
+                        <br/>Hintergrund
+                    </div>
+                    <div class="col">
+                        <input name="playername"
+                               class="playername inputfield"><br/>Spielername
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input name="race" class="race inputfield"><br/>Volk
+                    </div>
+                    <div class="col">
+                        <input name="alignment"
+                               class="alignment inputfield"><br/>Gesinnung
+                    </div>
+                    <div class="col">
+                        <input name="exp" class="exp inputfield"><br/>Exp
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-4" style="text-align: center">
+                        <div class="row tablerow">
+                            <div class="col">
+                                Stärke<br><input type="number"
+                                                 name="str"
+                                                 class="str numberfield inputfield"><br>
+                                <div class="stats">$STRM</div>
+                            </div>
+                        </div>
+                        <div class="row tablerow">
+                            <div class="col">
+                                Geschicklichkeit<br><input type="number"
+                                                           name="ges"
+                                                           class="ges numberfield inputfield"><br>
+                                <div class="stats">$GESM</div>
+                            </div>
+                        </div>
+                        <div class="row tablerow">
+                            <div class="col">
+                                Konstitution<br><input type="number"
+                                                       name="kon"
+                                                       class="kon numberfield inputfield"><br>
+                                <div class="stats">$KONM</div>
+                            </div>
+                        </div>
+                        <div class="row tablerow">
+                            <div class="col">
+                                Intelligenz<br><input type="number"
+                                                      name="intelligenz"
+                                                      class="intelligenz numberfield inputfield"><br>
+                                <div class="stats">$INTM</div>
+                            </div>
+                        </div>
+                        <div class="row tablerow">
+                            <div class="col">
+                                Weisheit<br><input type="number"
+                                                   name="weis"
+                                                   class="weis numberfield inputfield"><br>
+                                <div class="stats">$WEISM</div>
+                            </div>
+                        </div>
+                        <div class="row tablerow">
+                            <div class="col">
+                                Charisma<br><input type="number"
+                                                   name="cha"
+                                                   class="cha numberfield inputfield"><br>
+                                <div class="stats">$CHAM</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row tablerow">
+                            <div class="col">
+                                <input type="number"
+                                       name="inspiration"
+                                       class="inspiration numberfield inputfield"> Inspiration
+                            </div>
+                        </div>
+                        <div class="row tablerow">
+                            <div class="col">
+                                <input type="number"
+                                       name="übungsbonus"
+                                       class="übungsbonus numberfield inputfield"> Übungsbonus
+                            </div>
+                        </div>
+                        <div class="row tablerow">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                                            name="strretü"
+                                                            class="strretü inputfield"><span
+                                            class="stats">$STRRET</span> Stärke
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input
+                                                type="checkbox"
+                                                name="gesretü"
+                                                class="gesretü inputfield"><span
+                                            class="stats">$GESRET</span> Geschicklichkeit
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="konretü"
+                                               class="konretü inputfield"><span
+                                            class="stats">$KONRET</span> Konstitution
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="intretü"
+                                               class="intretü inputfield"><span
+                                            class="stats">$INTRET</span> Intelligenz
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="weisretü"
+                                               class="weisretü inputfield"><span
+                                            class="stats">$WEISRET</span> Weisheit
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="charetü"
+                                               class="charetü inputfield"><span
+                                            class="stats">$CHARET</span> Charisma
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col subtext">
+                                        Rettungswürfe
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row tablerow">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="akrobatikü"
+                                               class="akrobatikü inputfield"><span
+                                            class="stats">$AKROBATIK</span> Akrobatik
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="arkaneü"
+                                               class="arkaneü inputfield"><span
+                                            class="stats">$ARKANE</span> Arkane
+                                        Kunde
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="athletikü"
+                                               class="athletikü inputfield"><span
+                                            class="stats">$ATHLETIK</span> Athletik
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="auftretenü"
+                                               class="auftretenü inputfield"><span
+                                            class="stats">$AUFTRETEN</span> Auftreten
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="einschüchternü"
+                                               class="einschüchternü inputfield"><span
+                                            class="stats">$EINSCH</span> Einschüchtern
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="fingerfertigkeitü"
+                                               class="fingerfertigkeitü inputfield"><span
+                                            class="stats">$FF</span> Fingerfertigkeit
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="geschichteü"
+                                               class="geschichteü inputfield"><span
+                                            class="stats">$GESCHICHTE</span> Geschichte
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="heimlichkeitü"
+                                               class="heimlichkeitü inputfield"><span
+                                            class="stats">$HEIMLICH</span> Heimlichkeit
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="medizinü"
+                                               class="medizinü inputfield"><span
+                                            class="stats">$MEDIZIN</span> Medizin
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input
+                                                type="checkbox"
+                                                name="tiereü"
+                                                class="tiereü inputfield"><span
+                                            class="stats">$TIERE</span> Mit
+                                        Tieren umgehen
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input
+                                                type="checkbox"
+                                                name="motivü"
+                                                class="motivü inputfield"><span
+                                            class="stats">$MOTIV</span> Motiv
+                                        erkennen
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input
+                                                type="checkbox"
+                                                name="nachforschungenü"
+                                                class="nachforschungenü inputfield">
+                                        <span class="stats">$NACH</span> Nachforschungen
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="naturü"
+                                               class="naturü inputfield"><span
+                                            class="stats">$NATUR</span> Natur
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="religionü"
+                                               class="religinü inputfield"><span
+                                            class="stats">$RELI</span> Religion
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="täuschenü"
+                                               class="täuschenü inputfield"><span
+                                            class="stats">$TÄUSCHEN</span> Täuschen
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="überzeugenü"
+                                               class="überzeugenü inputfield"><span
+                                            class="stats">$ÜBERZEUGEN</span> Überzeugen
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="wahrnehmungü"
+                                               class="wahrnehmungü inputfield"><span
+                                            class="stats">$WAHRNEHMUNG</span> Wahrnehmung
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="checkbox"
+                                               name="überlebenü"
+                                               class="überlebenü inputfield"><span
+                                            class="stats">$ÜBERLEBEN</span> Überleben
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col subtext">
+                                        Fertigkeiten
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col tablerow">
+                        $PASSIVE Passive
+                        Wahrnehmung
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col tablerow">
+                        <textarea
+                                name="übungen"
+                                class="übungen inputfield"
+                                style="display: inline-block; overflow: auto; text-align: left; width: 100%; min-height: 125px">$ÜBUNGEN</textarea>
+                        <div style="text-align: center">Weitere Übungen und Sprachen
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-4 tablerow" style="text-align: center">
+                        <input
+                                name="rüstungsklasse"
+                                class="rüstungsklasse inputfield numberfield"
+                                type="number"><br/>Rüstungsklasse
+                    </div><div class="col-sm-4 tablerow" style="text-align: center">
+                    <input
+                            name="initiative"
+                            class="initiative inputfield numberfield"
+                            type="number"><br/>Initiative
+                </div><div class="col-sm-4 tablerow" style="text-align: center">
+                    <input
+                            name="bewegung"
+                            class="bewegung inputfield numberfield"
+                            type="number"><br/>Bewegungsrate
+                </div>
+                </div>
+                <div class="row tablerow" style="text-align: center">
+                    <div class="col">
+                        Trefferpunkte Maximum:
+                        <input name="maxhp" type="number"
+                               class="maxhp inputfield numberfield"><br>
+                        <input name="hp" type="number"
+                               class="temphp inputfield numberfield"><br>
+                        <div style="text-align: center">Aktuelle Trefferpunkte</div>
+                    </div>
+                </div>
+                <div class="row tablerow" style="text-align: center">
+                    <div class="col">
+                        <input name="temphp" type="number"
+                               class="temphp inputfield numberfield"><br/>
+                        <div style="text-align: center">Temporäre Trefferpunkte</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 tablerow">
+                        Gesamt: <input
+                            type="text"
+                            name="trefferwürfelmax"
+                            class="trefferwürfelmax inputfield"><br>
+                        <input type="text" name="trefferwürfel"
+                               class="trefferwürfel inputfield"><br>
+                        <div style="text-align: center" class="subtext">Trefferwürfel</div>
+                    </div>
+                    <div class="col-sm-6 tablerow">
+                        Erfolge <input type="checkbox"
+                                       disabled><input
+                            type="checkbox" disabled><input type="checkbox"
+                                                            disabled><br>
+                        Fehlschläge <input type="checkbox" disabled><input
+                            type="checkbox" disabled><input
+                            type="checkbox"
+                            disabled><br>
+                        <div style="text-align: center" class="subtext">Todesrettungswürfe
+                        </div>
+                    </div>
+                </div>
+                <div class="row tablerow">
+                    <div class="col">
+                    <table style="width: 100%; text-align: center; width: 450px" id="weapontable">
+                        <thead>
                         <tr>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <table>
-                                                <tr>
-                                                    <td class="tablerow"><input name="name"
-                                                                                class="name inputfield"><br/>Charaktername
-                                                    </td>
-                                                    <td class="tablerow">
-                                                        <table>
-                                                            <tr>
-                                                                <td>
-                                                                    <input name="class" class="class inputfield"><input
-                                                                        type="number" name="level"
-                                                                        class="level inputfield numberfield"><br/>
-                                                                    <div style="text-align: center"> Klasse &amp; Stufe
-                                                                    </div>
-                                                                </td>
-                                                                <td style="text-align: center">
-                                                                    <input name="background"
-                                                                           class="background inputfield">
-                                                                    <br/>Hintergrund
-                                                                </td>
-                                                                <td style="text-align: center">
-                                                                    <input name="playername"
-                                                                           class="playername inputfield"><br/>Spielername
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="text-align: center">
-                                                                    <input name="race" class="race inputfield"><br/>Volk
-                                                                </td>
-                                                                <td style="text-align: center">
-                                                                    <input name="alignment"
-                                                                           class="alignment inputfield"><br/>Gesinnung
-                                                                </td>
-                                                                <td style="text-align: center">
-                                                                    <input name="exp" class="exp inputfield"><br/>Exp
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
+                            <th>hasWeapon</th>
+                            <th>Name</th>
+                            <th>Schaden/Art</th>
                         </tr>
-                        <tr>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <table>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <table>
-                                                            <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <table>
-                                                                        <tbody>
-                                                                        <tr>
-                                                                            <td class="tablerow"
-                                                                                style="text-align: center">
-                                                                                Stärke<br><input type="number"
-                                                                                                 name="str"
-                                                                                                 class="str numberfield inputfield"><br>
-                                                                                <div class="stats">$STRM</div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="tablerow"
-                                                                                style="text-align: center">
-                                                                                Geschicklichkeit<br><input type="number"
-                                                                                                           name="ges"
-                                                                                                           class="ges numberfield inputfield"><br>
-                                                                                <div class="stats">$GESM</div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="tablerow"
-                                                                                style="text-align: center">
-                                                                                Konstitution<br><input type="number"
-                                                                                                       name="kon"
-                                                                                                       class="kon numberfield inputfield"><br>
-                                                                                <div class="stats">$KONM</div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="tablerow"
-                                                                                style="text-align: center">
-                                                                                Intelligenz<br><input type="number"
-                                                                                                      name="intelligenz"
-                                                                                                      class="intelligenz numberfield inputfield"><br>
-                                                                                <div class="stats">$INTM</div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="tablerow"
-                                                                                style="text-align: center">
-                                                                                Weisheit<br><input type="number"
-                                                                                                   name="weis"
-                                                                                                   class="weis numberfield inputfield"><br>
-                                                                                <div class="stats">$WEISM</div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="tablerow"
-                                                                                style="text-align: center">
-                                                                                Charisma<br><input type="number"
-                                                                                                   name="cha"
-                                                                                                   class="cha numberfield inputfield"><br>
-                                                                                <div class="stats">$CHAM</div>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                                <td>
-                                                                    <table>
-                                                                        <tbody>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table>
-                                                                                    <tr>
+                        </thead>
+                        <tbody>
+                        <!-- OPTIONS -->
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+                <div class="row tablerow">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <textarea
+                                        name="inventory"
+                                        class="inventory inputfield"
+                                        style="display: inline-block; overflow: auto; text-align: left; width: 100%; min-height: 125px">$INVENTORY</textarea>
+                            </div>
+                        </div><div class="row">
+                        <div class="col">KM: <input type="number"
+                                                    class="kupfermünzen inputfield numberfield"
+                                                    name="kupfermünzen">
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col">
+                            SM: <input type="number"
+                                       class="silbermünzen inputfield numberfield"
+                                       name="silbermünzen">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                EM: <input type="number"
+                                           class="elektrummünzen inputfield numberfield"
+                                           name="elektrummünzen">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                GM: <input type="number"
+                                           class="goldmünzen inputfield numberfield"
+                                           name="goldmünzen">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                PM: <input type="number"
+                                           class="platinmünzen inputfield numberfield"
+                                           name="platinmünzen">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col subtext">Inventory</div></div>
 
-                                                                                        <td class="tablerow"
-                                                                                            style="text-align: center">
-                                                                                            <input type="number"
-                                                                                                   name="inspiration"
-                                                                                                   class="inspiration numberfield inputfield">
-                                                                                        </td>
-                                                                                        <td class="tablerow"
-                                                                                            style="text-align: center">
-                                                                                            Inspiration
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td class="tablerow"
-                                                                                            style="text-align: center">
-                                                                                            <input type="number"
-                                                                                                   name="übungsbonus"
-                                                                                                   class="übungsbonus numberfield inputfield">
-                                                                                        </td>
-                                                                                        <td class="tablerow"
-                                                                                            style="text-align: center">
-                                                                                            Übungsbonus
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table class="tablerow"
-                                                                                       style="width: 100%">
-                                                                                    <tbody>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="strretü"
-                                                                                                   class="strretü inputfield"><span
-                                                                                                class="stats">$STRRET</span>Stärke
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td style="display: flex"><input
-                                                                                                type="checkbox"
-                                                                                                name="gesretü"
-                                                                                                class="gesretü inputfield"><span
-                                                                                                class="stats">$GESRET</span>Geschicklichkeit
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="konretü"
-                                                                                                   class="konretü inputfield"><span
-                                                                                                class="stats">$KONRET</span>Konstitution
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="intretü"
-                                                                                                   class="intretü inputfield"><span
-                                                                                                class="stats">$INTRET</span>Intelligenz
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="weisretü"
-                                                                                                   class="weisretü inputfield"><span
-                                                                                                class="stats">$WEISRET</span>Weisheit
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="charetü"
-                                                                                                   class="charetü inputfield"><span
-                                                                                                class="stats">$CHARET</span>Charisma
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td style="text-align: center">
-                                                                                            Rettungswürfe
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    </tbody>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <table class="tablerow">
-                                                                                    <tbody>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="akrobatikü"
-                                                                                                   class="akrobatikü inputfield"><span
-                                                                                                class="stats">$AKROBATIK</span>Akrobatik
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="arkaneü"
-                                                                                                   class="arkaneü inputfield"><span
-                                                                                                class="stats">$ARKANE</span>Arkane
-                                                                                            Kunde
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="athletikü"
-                                                                                                   class="athletikü inputfield"><span
-                                                                                                class="stats">$ATHLETIK</span>Athletik
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="auftretenü"
-                                                                                                   class="auftretenü inputfield"><span
-                                                                                                class="stats">$AUFTRETEN</span>Auftreten
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="einschüchternü"
-                                                                                                   class="einschüchternü inputfield"><span
-                                                                                                class="stats">$EINSCH</span>Einschüchtern
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="fingerfertigkeitü"
-                                                                                                   class="fingerfertigkeitü inputfield"><span
-                                                                                                class="stats">$FF</span>Fingerfertigkeit
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="geschichteü"
-                                                                                                   class="geschichteü inputfield"><span
-                                                                                                class="stats">$GESCHICHTE</span>Geschichte
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="heimlichkeitü"
-                                                                                                   class="heimlichkeitü inputfield"><span
-                                                                                                class="stats">$HEIMLICH</span>Heimlichkeit
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="medizinü"
-                                                                                                   class="medizinü inputfield"><span
-                                                                                                class="stats">$MEDIZIN</span>Medizin
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td style="display: flex"><input
-                                                                                                type="checkbox"
-                                                                                                name="tiereü"
-                                                                                                class="tiereü inputfield"><span
-                                                                                                class="stats">$TIERE</span>Mit
-                                                                                            Tieren umgehen
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td style="display: flex"><input
-                                                                                                type="checkbox"
-                                                                                                name="motivü"
-                                                                                                class="motivü inputfield"><span
-                                                                                                class="stats">$MOTIV</span>Motiv
-                                                                                            erkennen
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td style="display: flex"><input
-                                                                                                type="checkbox"
-                                                                                                name="nachforschungenü"
-                                                                                                class="nachforschungenü inputfield">
-                                                                                            <span class="stats">$NACH</span>Nachforschungen
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="naturü"
-                                                                                                   class="naturü inputfield"><span
-                                                                                                class="stats">$NATUR</span>Natur
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="religionü"
-                                                                                                   class="religinü inputfield"><span
-                                                                                                class="stats">$RELI</span>Religion
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="täuschenü"
-                                                                                                   class="täuschenü inputfield"><span
-                                                                                                class="stats">$TÄUSCHEN</span>Täuschen
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="überzeugenü"
-                                                                                                   class="überzeugenü inputfield"><span
-                                                                                                class="stats">$ÜBERZEUGEN</span>Überzeugen
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="wahrnehmungü"
-                                                                                                   class="wahrnehmungü inputfield"><span
-                                                                                                class="stats">$WAHRNEHMUNG</span>Wahrnehmung
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td><input type="checkbox"
-                                                                                                   name="überlebenü"
-                                                                                                   class="überlebenü inputfield"><span
-                                                                                                class="stats">$ÜBERLEBEN</span>Überleben
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    </tbody>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <table style="width: 100%;">
-                                                            <tr>
-                                                                <td class="tablerow" style="text-align: center"><span
-                                                                        class="stats">$PASSIVE</span></td>
-                                                                <td class="tablerow" style="text-align: center"> Passive
-                                                                    Wahrnehmung
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="tablerow">
-                                                        <textarea
-                                                                name="übungen"
-                                                                class="übungen inputfield"
-                                                                style="display: inline-block; overflow: auto; text-align: left; width: 100%; min-height: 125px">$ÜBUNGEN</textarea>
-                                                        <div style="text-align: center">Weitere Übungen und Sprachen
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <table>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <table style="width: 100%">
-                                                            <tbody>
-                                                            <tr>
-                                                                <td class="tablerow" style="text-align: center"><input
-                                                                        name="rüstungsklasse"
-                                                                        class="rüstungsklasse inputfield numberfield"
-                                                                        type="number"><br/>Rüstungsklasse
-                                                                </td>
-                                                                <td class="tablerow" style="text-align: center"><input
-                                                                        name="initiative"
-                                                                        class="initiative inputfield numberfield"
-                                                                        type="number"><br/>Initiative
-                                                                </td>
-                                                                <td class="tablerow" style="text-align: center"><input
-                                                                        name="bewegung"
-                                                                        class="bewegung inputfield numberfield"
-                                                                        type="number"><br/>Bewegungsrate
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="tablerow">Trefferpunkte Maximum:
-                                                        <input name="maxhp" type="number"
-                                                               class="maxhp inputfield numberfield"><br>
-                                                        <input name="hp" type="number"
-                                                               class="temphp inputfield numberfield"><br>
-                                                        <div style="text-align: center">Aktuelle Trefferpunkte</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="tablerow">
-                                                        <input name="temphp" type="number"
-                                                               class="temphp inputfield numberfield"><br/>
-                                                        <div style="text-align: center">Temporäre Trefferpunkte</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <table>
-                                                            <tbody>
-                                                            <tr>
-                                                                <td class="tablerow" style="width: 50%">Gesamt: <input
-                                                                        type="text"
-                                                                        name="trefferwürfelmax"
-                                                                        class="trefferwürfelmax inputfield"><br>
-                                                                    <input type="text" name="trefferwürfel"
-                                                                           class="trefferwürfel inputfield"><br>
-                                                                    <div style="text-align: center">Trefferwürfel</div>
-                                                                </td>
-                                                                <td class="tablerow">Erfolge <input type="checkbox"
-                                                                                                    disabled><input
-                                                                        type="checkbox" disabled><input type="checkbox"
-                                                                                                        disabled><br>
-                                                                    Fehlschläge <input type="checkbox" disabled><input
-                                                                            type="checkbox" disabled><input
-                                                                            type="checkbox"
-                                                                            disabled><br>
-                                                                    <div style="text-align: center">Todesrettungswürfe
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="tablerow">
-                                                        <table style="width: 100%; text-align: center; width: 450px" id="weapontable">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>hasWeapon</th>
-                                                                <th>Name</th>
-                                                                <th>Schaden/Art</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                    <!-- OPTIONS -->
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="tablerow">
-                                                        <table style="width: 100%;">
-                                                            <tr>
-                                                                <td><textarea
-                                                                    name="inventory"
-                                                                    class="inventory inputfield"
-                                                                    style="display: inline-block; overflow: auto; text-align: left; width: 100%; min-height: 125px">$INVENTORY</textarea>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>KM: <input type="number"
-                                                                               class="kupfermünzen inputfield numberfield"
-                                                                               name="kupfermünzen"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>SM: <input type="number"
-                                                                               class="silbermünzen inputfield numberfield"
-                                                                               name="silbermünzen"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>EM: <input type="number"
-                                                                               class="elektrummünzen inputfield numberfield"
-                                                                               name="elektrummünzen"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GM: <input type="number"
-                                                                               class="goldmünzen inputfield numberfield"
-                                                                               name="goldmünzen"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>PM: <input type="number"
-                                                                               class="platinmünzen inputfield numberfield"
-                                                                               name="platinmünzen"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="text-align: center">Inventory</td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
 
-                                        <td>
-                                            <table>
-                                                <tbody>
-                                                <tr>
-                                                    <td class="tablerow">
-                                                        <input type="text" name="persönlichkeit"
-                                                               class="persönlichkeit inputfield"><br>
-                                                        <div style="text-align: center">Persönlichkeitsmerkmale</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="tablerow">
-                                                        <input type="text" name="ideale" class="ideale inputfield"><br>
-                                                        <div style="text-align: center">Ideale</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="tablerow">
-                                                        <input type="text" name="bindungen"
-                                                               class="bindungen inputfield"><br>
-                                                        <div style="text-align: center">Bindungen</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="tablerow">
-                                                        <input type="text" name="makel" class="makel inputfield"><br>
-                                                        <div style="text-align: center">Makel</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="tablerow">
+                </div>
+                </div>
+            </div><div class="col-sm-4" style="text-align: center">
+            <div class="row tablerow">
+                <div class="col">
+                    <input type="text" name="persönlichkeit"
+                           class="persönlichkeit inputfield"><br>
+                    <div style="text-align: center">Persönlichkeitsmerkmale</div>
+                </div>
+            </div>
+            <div class="row tablerow">
+                <div class="col">
+                    <input type="text" name="ideale" class="ideale inputfield"><br>
+                    <div style="text-align: center">Ideale</div>
+                </div>
+            </div>
+            <div class="row tablerow">
+                <div class="col">
+                    <input type="text" name="bindungen"
+                           class="bindungen inputfield"><br>
+                    <div style="text-align: center">Bindungen</div>
+                </div>
+            </div>
+            <div class="row tablerow">
+                <div class="col">
+                    <input type="text" name="makel" class="makel inputfield"><br>
+                    <div style="text-align: center">Makel</div>
+                </div>
+            </div>
+            <div class="row tablerow">
+                <div class="col">
                                                         <textarea
                                                                 name="merkmale"
                                                                 class="merkmale inputfield"
                                                                 style="display: inline-block; overflow: auto; text-align: left; width: 100%; min-height: 125px">$MERKMALE</textarea>
-                                                        <br>
-                                                        <div style="text-align: center">Merkmale</div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    </tbody></table>
-                            </td>
-                        </tr>
-                    </table>
-            </tr>
-        </table>
-        </tr></table>
+                    <br>
+                    <div style="text-align: center">Merkmale</div>
+                </div>
+            </div>
+
+            </div>
         <input type="hidden" name="tab" value="view">
         <input type="hidden" name="editmode" value="full">
+    </div>
     </div>
     <div id="spells" class="tabcontent">
     <table style="display: block; max-height: 1000px" id="spelltable">
