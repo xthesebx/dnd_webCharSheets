@@ -213,7 +213,7 @@ public class CharView extends JavalinAuthPage {
                     ResultSet resultSet = Mysql.getCharSpells(id, String.valueOf(i));
                     StringBuilder spells = new StringBuilder();
                     while (resultSet.next()) {
-                        spells.append("<tr><td>" + resultSet.getString("name") + "</td></tr>");
+                        spells.append("<div class=\"row\"><div class=\"col\">" + resultSet.getString("name") + "</div></div>");
                     }
                     html = html.replace("$SPELLLIST" + i, spells.toString());
                 }
@@ -371,21 +371,6 @@ public class CharView extends JavalinAuthPage {
                 break;
             }
         }
-        if (!Mysql.getCharHasSpells(id)) html = html.replace(" id=\"spellTable\"", " id=\"spellTable\" style=\"display: none\"");
-        else {
-            for (int i = 0; i < 10; i++) {
-                if (Mysql.getCharHasSpellLevel(id, String.valueOf(i))) {
-                    html = html.replaceFirst("spell" + i + "\" style=\"display: none\"", "spell" + i + "\"");
-                    ResultSet resultSet = Mysql.getCharSpells(id, String.valueOf(i));
-                    StringBuilder spells = new StringBuilder();
-                    while (resultSet.next()) {
-                        spells.append("<tr><td>").append(resultSet.getString("name")).append("</td></tr>");
-                    }
-                    html = html.replace("$SPELLLIST" + i, spells.toString());
-                }
-
-            }
-        }
         ResultSet charDetails = Mysql.charDetails(id);
         ResultSetMetaData charMeta = charDetails.getMetaData();
         charDetails.next();
@@ -414,17 +399,22 @@ public class CharView extends JavalinAuthPage {
             options.append("<tr><td><input type='checkbox' name='weapons' value='").append(weapons.getString("name")).append("' class='schema'").append(weaponList.contains(weapons.getString("name")) ? " checked" : "").append(">").append(weapons.getString("name")).append(" ").append(weapons.getString("damage")).append("</td></tr>");
         }
         html = html.replaceFirst("<!-- OPTIONS -->", options.toString());
-        ResultSet spells = Mysql.getSpells();
-        StringBuilder spellOptions = new StringBuilder();
-        ArrayList<String> spellList = new ArrayList<>();
-        ResultSet charSpells = Mysql.getCharSpells(id);
-        while (charSpells.next()) {
-            spellList.add(charSpells.getString(1));
+
+        if (!Mysql.getCharHasSpells(id)) html = html.replace(" id=\"spellTable\"", " id=\"spellTable\" style=\"display: none\"");
+        else {
+            for (int i = 0; i < 10; i++) {
+                if (Mysql.getCharHasSpellLevel(id, String.valueOf(i))) {
+                    html = html.replaceFirst("spell" + i + "\" style=\"display: none\"", "spell" + i + "\"");
+                    ResultSet resultSet = Mysql.getCharSpells(id, String.valueOf(i));
+                    StringBuilder spells = new StringBuilder();
+                    while (resultSet.next()) {
+                        spells.append("<div class=\"row\"><div class=\"col\">").append(resultSet.getString("name")).append("</div></div>");
+                    }
+                    html = html.replace("$SPELLLIST" + i, spells.toString());
+                }
+
+            }
         }
-        while (spells.next()) {
-            spellOptions.append("<tr><td><input type='checkbox' class='schema' name=\"spells\" value=\"").append(spells.getString("id")).append("\" ").append(spellList.contains(spells.getString("name")) ? "checked" : "").append(">").append(spells.getString("name"));
-        }
-        html = html.replace("<!-- SPELLOPTIONS -->", spellOptions.toString());
         return html;
     }
 }

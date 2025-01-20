@@ -177,7 +177,7 @@ public class ViewShare extends JavalinPage {
                     ResultSet resultSet = Mysql.getCharSpells(id, String.valueOf(i));
                     StringBuilder spells = new StringBuilder();
                     while (resultSet.next()) {
-                        spells.append("<tr><td>" + resultSet.getString("name") + "</td></tr>");
+                        spells.append("<div class=\"row\"><div class=\"col\">" + resultSet.getString("name") + "</div></div>");
                     }
                     html = html.replace("$SPELLLIST" + i, spells.toString());
                 }

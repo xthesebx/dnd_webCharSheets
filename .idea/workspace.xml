@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="fix too many inputs in create">
+    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="fix share url">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Login/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +153,7 @@
       <workItem from="1736947838426" duration="20000" />
       <workItem from="1737124156175" duration="2249000" />
       <workItem from="1737317838429" duration="18408000" />
-      <workItem from="1737367871320" duration="17710000" />
+      <workItem from="1737367871320" duration="18374000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -377,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737385260992</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fix share url">
+      <option name="closed" value="true" />
+      <created>1737385615616</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1737385615616</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +417,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix html error" />
     <MESSAGE value="rebuild in java17" />
     <MESSAGE value="change port" />
     <MESSAGE value="can now add weapons and spells and more" />
@@ -432,6 +441,7 @@
     <MESSAGE value="add share possibility, responsiveness" />
     <MESSAGE value="make timeout longer" />
     <MESSAGE value="fix too many inputs in create" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix too many inputs in create" />
+    <MESSAGE value="fix share url" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix share url" />
   </component>
 </project>
