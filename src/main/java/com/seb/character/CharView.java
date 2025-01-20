@@ -1,11 +1,10 @@
 package com.seb.character;
 
-import com.hawolt.logger.Logger;
 import com.seb.Mysql;
 import com.seb.abs.JavalinAuthPage;
 import io.javalin.http.Context;
 import io.javalin.util.FileUtil;
-import org.apache.commons.logging.Log;
+import org.apache.commons.text.StringEscapeUtils;
 
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
@@ -22,30 +21,30 @@ public class CharView extends JavalinAuthPage {
         if (cancel) return;
         id = ctx.pathParam("id");
         String s = FileUtil.readFile("html/viewChar.html");
-        String first = firstDiv(s.substring(0, s.indexOf("<div id=\"play")));
+        String first = firstDiv(s.substring(0, s.indexOf("<div id=\"Play-View")));
 
-        if (ctx.queryParam("tab") != null) {
-            String tab = ctx.queryParam("tab");
-            first = first.replace("<button onclick=\"openTab(event, 'view')\" id=\"defaultOpen\" class=\"tablinks scheme\">view</button>", "<button onclick=\"openTab(event, 'view')\" class=\"tablinks scheme\">view</button>");
-            first = first.replace("<button onclick=\"openTab(event, '" + tab + "')\" class=\"tablinks scheme\">" + tab + "</button>", "<button onclick=\"openTab(event, '" + tab + "')\" id=\"defaultOpen\" class=\"tablinks scheme\">" + tab + "</button>");
-        }
-        String second = secondDiv(s.substring(s.indexOf("<div id=\"playing\""), s.indexOf("\n" +
-                "<button onclick=\"window.location = '/'\" class=\"scheme\">back</button>")));
+
+        String second = secondDiv(s.substring(s.indexOf("<div id=\"Play-View\""), s.indexOf("\n" +
+                "<button onclick=\"window.location = '/'\" class=\"scheme\">Back</button>")));
         String footer = s.substring(s.indexOf("\n" +
-                "<button onclick=\"window.location = '/'\" class=\"scheme\">back</button>")).replace("$ID", id);
-        String others = "";
-        String tabs = "";
+                "<button onclick=\"window.location = '/'\" class=\"scheme\">Back</button>")).replace("$ID", id);
+        StringBuilder others = new StringBuilder();
+        StringBuilder tabs = new StringBuilder();
         if (Mysql.userHasCustomViews(getUser())) {
             ResultSet rs = Mysql.getCustomViews(getUser());
             while (rs.next()) {
-                others += secondDiv(rs.getString(1).replace("$TABNAME", rs.getString(2)));
-                tabs += "\n" +
-                        "    <button onclick=\"openTab(event, '" + rs.getString(2) + "')\" class=\"tablinks scheme\">" + rs.getString(2) + "</button>";
+                others.append(secondDiv(rs.getString(1).replace("$TABNAME", rs.getString(2))));
+                tabs.append("\n" + "    <button onclick=\"openTab(event, '").append(rs.getString(2)).append("')\" class=\"tablinks scheme\">").append(rs.getString(2)).append("</button>");
             }
         }
         String html = first + second + footer;
-        html = html.replace("<!-- CUSTOM VIEWS-->", others);
-        html = html.replace("<!-- CUSTOM TABS -->", tabs);
+        html = html.replace("<!-- CUSTOM VIEWS-->", others.toString());
+        html = html.replace("<!-- CUSTOM TABS -->", tabs.toString());
+        if (ctx.queryParam("tab") != null) {
+            String tab = ctx.queryParam("tab");
+            html = html.replace("<button onclick=\"openTab(event, 'Default-View')\" id=\"defaultOpen\" class=\"tablinks scheme\">Default-View</button>", "<button onclick=\"openTab(event, 'Default-View')\" class=\"tablinks scheme\">Default-View</button>");
+            html = html.replace("<button onclick=\"openTab(event, '" + StringEscapeUtils.unescapeHtml4(tab) + "')\" class=\"tablinks scheme\">" + StringEscapeUtils.unescapeHtml4(tab) + "</button>", "<button onclick=\"openTab(event, '" + StringEscapeUtils.unescapeHtml4(tab) + "')\" id=\"defaultOpen\" class=\"tablinks scheme\">" + StringEscapeUtils.unescapeHtml4(tab) + "</button>");
+        }
         ctx.html(html);
     }
     
@@ -72,9 +71,20 @@ public class CharView extends JavalinAuthPage {
                     skillIt += 1;
                 }
             }
-            if (rsmd.getColumnName(i).equals("id")) {continue;}
+            if (rsmd.getColumnName(i).equals("id")) {
+                continue;
+            }
             if (rs.getString(i) == null) {
-                html = html.replaceFirst("\\$" + rsmd.getColumnName(i).toUpperCase(), "");
+                html = html.replaceAll("\\$" + rsmd.getColumnName(i).toUpperCase() + "\\s*\\<", "<");
+                switch (rsmd.getColumnName(i)) {
+                    case "class" -> html = html.replace("$CLASS", "");
+                    case "str" -> html = html.replace("$STRM", "");
+                    case "ges" -> html = html.replace("$GESM", "");
+                    case "weis" -> html = html.replace("$WEISM", "");
+                    case "cha" -> html = html.replace("$CHAM", "");
+                    case "kon" -> html = html.replace("$KONM", "");
+                    case "intelligenz" -> html = html.replace("$INTM", "");
+                }
                 continue;
             }
             if (rsmd.getColumnName(i).equals("class")) {
@@ -154,7 +164,7 @@ public class CharView extends JavalinAuthPage {
                 .replace("$ÜBERLEBEN", skillÜbung[0] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
                 .replace("$PASSIVE", skillÜbung[16] ? String.valueOf(weis + übungsbonus + 10) : String.valueOf(weis + 10))
                 .replace("$ID", id)
-                .replace("<tr><td>$WAFFEN</td></tr>", waffen.toString())
+                .replace("$WAFFEN", waffen.toString())
                 .replace("Erfolge [0]", "Erfolge [0][0][0]")
                 .replace("Fehlschläge [0]", "Fehlschläge [0][0][0]")
                 .replace("Erfolge [1]", "Erfolge [1][0][0]")
@@ -223,9 +233,25 @@ public class CharView extends JavalinAuthPage {
                     skillIt += 1;
                 }
             }
-            if (rsmd.getColumnName(i).equals("id")) {continue;}
+            if (rsmd.getColumnName(i).equals("story")) {
+                if (rs.getString(i) == null) {
+
+                    html = html.replaceFirst("\\$STORY", "");
+                } else
+                    html = html.replaceFirst("\\$STORY", StringEscapeUtils.unescapeHtml4(rs.getString(i)));
+                continue;
+            }
+            if (rsmd.getColumnName(i).equals("id")) continue;
             if (rs.getString(i) == null) {
                 html = html.replaceFirst("\\$" + rsmd.getColumnName(i).toUpperCase(), "");
+                switch (rsmd.getColumnName(i)) {
+                    case "str" -> html = html.replace("$STRM", "");
+                    case "ges" -> html = html.replace("$GESM", "");
+                    case "weis" -> html = html.replace("$WEISM", "");
+                    case "cha" -> html = html.replace("$CHAM", "");
+                    case "kon" -> html = html.replace("$KONM", "");
+                    case "intelligenz" -> html = html.replace("$INTM", "");
+                }
                 continue;
             }
             if (rsmd.getColumnName(i).equals("class")) {
@@ -305,7 +331,7 @@ public class CharView extends JavalinAuthPage {
                 .replace("$ÜBERLEBEN", skillÜbung[0] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
                 .replace("$PASSIVE", skillÜbung[16] ? String.valueOf(weis + übungsbonus + 10) : String.valueOf(weis + 10))
                 .replace("$ID", id)
-                .replace("<tr><td>$WAFFEN</td></tr>", waffen.toString())
+                .replace("$WAFFEN", waffen.toString())
                 .replace("Erfolge [0]", "Erfolge [0][0][0]")
                 .replace("Fehlschläge [0]", "Fehlschläge [0][0][0]")
                 .replace("Erfolge [1]", "Erfolge [1][0][0]")
@@ -341,7 +367,7 @@ public class CharView extends JavalinAuthPage {
                     ResultSet resultSet = Mysql.getCharSpells(id, String.valueOf(i));
                     StringBuilder spells = new StringBuilder();
                     while (resultSet.next()) {
-                        spells.append("<tr><td>" + resultSet.getString("name") + "</td></tr>");
+                        spells.append("<tr><td>").append(resultSet.getString("name")).append("</td></tr>");
                     }
                     html = html.replace("$SPELLLIST" + i, spells.toString());
                 }

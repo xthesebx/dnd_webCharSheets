@@ -24,7 +24,7 @@ public class Overview extends JavalinLoggedInPage {
                     .append("</td> <td style='text-align: center' class='tablerow' onclick=\"window.location='/charsheet/").append(id).append("'\">").append(rs.getString("class"))
                     .append("</td> <td style='text-align: center' class='tablerow' onclick=\"window.location='/charsheet/").append(id).append("'\">").append(rs.getString("level"))
                     .append("</td> <td style='text-align: center' class='tablerow' onclick=\"window.location='/charsheet/").append(id).append("'\">").append(id)
-                    .append("</td><td style='text-align: center' class='tablerow'>").append("<button class='scheme' onclick=\"location='/delete/").append(id).append("'\">DELETE</button></td></tr>");
+                    .append("</tr>");
         }
         html = html.replace("$EINTRÄGE", sb.toString());
         if (Main.sessionUserTimer.getJSONObject(ctx.cookie("JSESSIONID")).getString("user").equals("stdbasti"))

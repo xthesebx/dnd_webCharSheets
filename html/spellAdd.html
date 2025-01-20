@@ -4,37 +4,61 @@
     <meta charset="UTF-8">
     <title>Spell Adding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.1/js/dataTables.js"></script>
 </head>
 <body>
-<table>
+<table id="spelltable">
+    <thead>
     <tr>
-        <td class="tablerow">name</td>
-        <td class="tablerow">requirements</td>
-        <td class="tablerow">level</td>
-        <td class="tablerow">description</td>
+        <th class="tablerow">name</th>
+        <th class="tablerow">requirements</th>
+        <th class="tablerow">level</th>
+        <th class="tablerow">description</th>
     </tr>
+    </thead>
+    <tbody>
     <!-- $EINTRÄGE -->
+    </tbody>
+</table>
+<table>
+    <thead>
     <tr>
-        <form method="post" action="/addspell">
-            <td>
-                <input type="text" name="name" class="name inputfield"/>
-            </td>
-            <td>
-                <input type="text" name="requirements" class="requirements inputfield"/>
-            </td>
-            <td>
-                <input type="number" name="level" class="level inputfield numberfield"/>
-            </td>
-            <td>
-                <input type="text" name="description" class="description inputfield"/>
-            </td>
-            <td>
-                <input type="submit" class="submit scheme">
-            </td>
-        </form>
+        <th class="tablerow">name</th>
+        <th class="tablerow">requirements</th>
+        <th class="tablerow">level</th>
+        <th class="tablerow">description</th>
     </tr>
-
+    </thead>
+    <form method="post" action="/addspell">
+        <td>
+            <input type="text" name="name" class="name inputfield"/>
+        </td>
+        <td>
+            <input type="text" name="requirements" class="requirements inputfield"/>
+        </td>
+        <td>
+            <input type="number" name="level" class="level inputfield numberfield"/>
+        </td>
+        <td>
+            <input type="text" name="description" class="description inputfield"/>
+        </td>
+        <td>
+            <input type="submit" class="submit scheme">
+        </td>
+    </form>
 </table>
 <button type="button" onclick="location='/'" class="scheme">back</button>
+<script>
+    let weapontable = new DataTable('#spelltable', {
+        order: [
+            [2, 'asc'],
+            [0, 'asc']
+        ],
+        scrollY: '80%'
+
+    });
+</script>
 </body>
 </html>

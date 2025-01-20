@@ -7,16 +7,41 @@
 </head>
 <body>
 <form method="post" action="/registerpost" enctype="multipart/form-data" id="register">
-    registration Code: <label>
-    <input type="text" name="code" required class="scheme">
-</label> <br>
-    username: <label>
-    <input type="text" name="username" required class="scheme" autocorrect="off" autocapitalize="none"
-           autocomplete="off">
-</label> <br>
-    password: <label>
-    <input type="password" name="password" required class="scheme">
-</label>
-    <button class="scheme">Register</button>
+    <table>
+        <tr>
+            <td>
+                Registration Code:
+            </td>
+            <td>
+                <input type="text" name="code" required class="scheme">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td>
+                <input type="text" name="username" required class="scheme" autocorrect="off" autocapitalize="none"
+                       autocomplete="off">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="password" name="password" required class="scheme">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="scheme" onclick="location='/login'">Back</button>
+            </td>
+            <td>
+                <button class="scheme">Register</button>
+            </td>
+        </tr>
+    </table>
+
 </form>
 </body>

@@ -9,14 +9,40 @@
     color: #afcad5;
 }
 
+button {
+    font-size: 20px;
+    border: 3px solid;
+}
+div {
+    font-size: 20px;
+}
+
+input {
+    font-size: 20px;
+}
+
+a {
+    font-size: 20px;
+}
+
 body {
     background: #263238;
     color: #afcad5;
+    font-size: 20px;
 }
 
 td {
     background: #263238;
     color: #afcad5;
+    font-size: 20px;
+}
+
+th {
+    font-size: 20px;
+}
+
+textarea {
+    font-size: 20px;
 }
 
 .submit {
@@ -28,6 +54,15 @@ td {
 .numberfield {
     width: 50px;
     color: #afcad5;
+}
+
+p {
+    margin-block-start: 0.1em;
+    margin-block-end: 0em;
+}
+
+a {
+    color: #9de178;
 }
 
 .tablefill {

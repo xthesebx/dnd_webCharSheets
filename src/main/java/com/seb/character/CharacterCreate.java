@@ -8,7 +8,6 @@ import io.javalin.util.FileUtil;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class CharacterCreate extends JavalinLoggedInPage {
     public CharacterCreate(Context ctx) throws SQLException, NoSuchAlgorithmException {
@@ -19,13 +18,14 @@ public class CharacterCreate extends JavalinLoggedInPage {
         ResultSet weapons = Mysql.getWeapons();
         StringBuilder options = new StringBuilder();
         while (weapons.next()) {
-            options.append("<tr><td><input type='checkbox' name='weapons' value='").append(weapons.getString("name")).append("' class='schema'").append(">").append(weapons.getString("name")).append(" ").append(weapons.getString("damage")).append("</td></tr>");
+            options.append("<tr><td><input type='checkbox' name='weapons' value='").append(weapons.getString("name")).append("' class='schema'").append(">").append("<td style=\"text-align: center\">").append(weapons.getString("name")).append("</td><td>").append(weapons.getString("damage")).append("</td></tr>");
         }
         html = html.replaceFirst("<!-- OPTIONS -->", options.toString());
+        html = html.replace("$ÜBUNGEN", "").replace("$INVENTORY", "").replace("$MERKMALE", "").replace("$STORY", "");
         ResultSet spells = Mysql.getSpells();
         StringBuilder spellOptions = new StringBuilder();
         while (spells.next()) {
-            spellOptions.append("<tr><td><input type='checkbox' class='schema' name=\"spells\" value=\"").append(spells.getString("id")).append("\" ").append(">").append(spells.getString("name"));
+            spellOptions.append("<tr><td><input type='checkbox' class='schema' name=\"spells\" value=\"").append(spells.getString("id")).append("\" ").append("></td><td>").append(spells.getString("name")).append("</td><td>").append(spells.getString("level"));
         }
         html = html.replace("<!-- SPELLOPTIONS -->", spellOptions.toString());
         ctx.html(html);

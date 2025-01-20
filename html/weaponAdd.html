@@ -4,16 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weapon Adder</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.1/js/dataTables.js"></script>
 </head>
 <body>
-<table>
+<table id="weapontable" style="height: 80%">
+    <thead>
     <tr>
-        <td class="tablerow">name</td>
-        <td class="tablerow">finesse</td>
-        <td class="tablerow">damage</td>
-        <td class="tablerow">damagetype</td>
+        <th class="tablerow">name</th>
+        <th class="tablerow">finesse</th>
+        <th class="tablerow">damage</th>
+        <th class="tablerow">damagetype</th>
+        <th class="tablerow">is spell</th>
     </tr>
+    </thead>
+    <tbody>
     <!-- $EINTRÄGE -->
+    </tbody>
+</table>
+<table>
+    <thead>
+    <tr>
+        <th class="tablerow">name</th>
+        <th class="tablerow">finesse</th>
+        <th class="tablerow">damage</th>
+        <th class="tablerow">damagetype</th>
+        <th class="tablerow">is spell</th>
+    </tr>
+    </thead>
     <tr>
         <form method="post" action="/addweapon">
             <td>
@@ -40,5 +59,14 @@
 </table>
 
 <button type="button" onclick="location='/'" class="scheme">back</button>
+<script>
+    let weapontable = new DataTable('#weapontable', {
+        order: [
+            [0, 'asc'],
+        ],
+        scrollY: '80%'
+
+    });
+</script>
 </body>
 </html>

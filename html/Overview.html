@@ -2,26 +2,43 @@
     <title>Overview</title>
     <link rel="stylesheet" href="/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.1/js/dataTables.js"></script>
 </head>
 <body>
-<button onclick="location='/logout'" style="float: right" class="scheme">logout</button>
-<button onclick="window.location='/createpage'" class="scheme">create character</button>
+<button onclick="location='/logout'" style="float: right" class="scheme">Logout</button>
+<div>Please try SQL Injection rn, I think I fixed it but pls try to break it
+    <a href="https://github.com/xthesebx/dnd_webCharSheets" style="color: #9de178"> github</a> and open an issue.
+</div>
 <br>
-Please don't try SQL Injection rn, I know it's a current issue. for bugs and issues tell me on discord or go to <a
-        href="https://github.com/xthesebx/dnd_webCharSheets" style="color: #9de178"> github</a> and open an issue.
-
-
-<table>
+<table id="chartable">
+    <thead>
     <tr class="tablerow">
         <th class="tablerow">Chracter Name</th>
         <th class="tablerow">Klasse</th>
         <th class="tablerow">Level</th>
         <th class="tablerow">Chracter ID</th>
     </tr>
+    </thead>
+    <tbody>
     $EINTRÄGE
+    </tbody>
 </table>
+<br>
 <button class="scheme" onclick="location='/weaponAdd'">Add Weapon</button>
 <button class="scheme" onclick="location='/spellAdd'">Add Spell</button>
+<button onclick="window.location='/createpage'" class="scheme">Create Character</button>
+<br>
 
 ADMINBUTTON
+<script>
+    let chartable = new DataTable('#chartable', {
+        order: [
+            [0, 'asc'],
+        ],
+        scrollY: '80%'
+
+    });
+</script>
 </body>
