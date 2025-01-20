@@ -43,7 +43,8 @@ public class JavalinLoggedInPage extends JavalinPage {
                 String sessionid = ctx.cookie("JSESSIONID");
                 JSONObject sessionobject = new JSONObject().put("loginstatus", ls);
                 if (ls.equals(LoginStatus.SUCCESS))
-                    sessionobject.put("user", username).put("timestamp", System.currentTimeMillis() + 900000);
+                    sessionobject.put("user", username).put("timestamp", System.currentTimeMillis() + 3600000);
+                Logger.error(System.currentTimeMillis() + 3600000);
                 try {
                     Main.sessionUserTimer.put(sessionid, sessionobject);
                 } catch (NullPointerException e) {
@@ -53,7 +54,7 @@ public class JavalinLoggedInPage extends JavalinPage {
             }
             ctx.redirect("/login");
             cancel = true;
-        } else Main.sessionUserTimer.getJSONObject(ctx.cookie("JSESSIONID")).put("timestamp", System.currentTimeMillis() + 300000);
+        } else Main.sessionUserTimer.getJSONObject(ctx.cookie("JSESSIONID")).put("timestamp", System.currentTimeMillis() + 3600000);
     }
 
     protected String getUser() {

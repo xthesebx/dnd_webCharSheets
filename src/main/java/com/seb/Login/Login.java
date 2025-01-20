@@ -31,7 +31,8 @@ public class Login extends JavalinPage {
             String sessionid = ctx.cookie("JSESSIONID");
             JSONObject sessionobject = new JSONObject().put("loginstatus", ls);
             if (ls.equals(LoginStatus.SUCCESS))
-                sessionobject.put("user", username).put("timestamp", System.currentTimeMillis() + 900000);
+                sessionobject.put("user", username).put("timestamp", System.currentTimeMillis() + 3600000);
+            Logger.error(System.currentTimeMillis() + 3600000);
             Main.sessionUserTimer.put(sessionid, sessionobject);
         } catch (SQLException e) {
             Logger.error(e);
