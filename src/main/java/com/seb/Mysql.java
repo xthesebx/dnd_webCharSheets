@@ -39,7 +39,6 @@ public class Mysql {
         String username = data.getString("username");
         con = DriverManager.getConnection("jdbc:mariadb://sebgameservers.de:3306/dnd", username, password);
         timestamp = System.currentTimeMillis() + 28800000;
-        Logger.error(timestamp);
     }
 
     public static ResultSet charDetails(String id) throws SQLException {
