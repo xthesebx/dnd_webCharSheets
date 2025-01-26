@@ -19,6 +19,6 @@ public class NewView extends JavalinLoggedInPage {
             tabname = basename + i;
         }
         Mysql.createCustomView(getUser(), tabname);
-        ctx.redirect("/charsheet/2?tab=" + tabname);
+        ctx.redirect("/charsheet/" + ctx.queryParam("id") + "?tab=" + tabname);
     }
 }

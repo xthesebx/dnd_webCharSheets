@@ -44,7 +44,6 @@ public class JavalinLoggedInPage extends JavalinPage {
                 JSONObject sessionobject = new JSONObject().put("loginstatus", ls);
                 if (ls.equals(LoginStatus.SUCCESS))
                     sessionobject.put("user", username).put("timestamp", System.currentTimeMillis() + 3600000);
-                Logger.error(System.currentTimeMillis() + 3600000);
                 try {
                     Main.sessionUserTimer.put(sessionid, sessionobject);
                 } catch (NullPointerException e) {

@@ -9,12 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="fix spell layout">
-      <change afterPath="$PROJECT_DIR$/html/shareView.html" afterDir="false" />
+    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="remove unneccessary print">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/defaultView.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/defaultView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/viewChar.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/viewChar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/ViewShare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/ViewShare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/abs/JavalinLoggedInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/abs/JavalinLoggedInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/views/NewView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/views/NewView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.pdf.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -156,7 +157,7 @@
       <workItem from="1737124156175" duration="2249000" />
       <workItem from="1737317838429" duration="18408000" />
       <workItem from="1737367871320" duration="21312000" />
-      <workItem from="1737901174849" duration="949000" />
+      <workItem from="1737901174849" duration="2268000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -398,7 +399,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737386402677</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix wait_timeout sql error kicking my ass">
+      <option name="closed" value="true" />
+      <created>1737902279692</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1737902279692</updated>
+    </task>
+    <task id="LOCAL-00032" summary="remove unneccessary print">
+      <option name="closed" value="true" />
+      <created>1737902421835</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1737902421835</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,8 +445,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change port" />
-    <MESSAGE value="can now add weapons and spells and more" />
     <MESSAGE value="fix ide" />
     <MESSAGE value="try to add responsiveness" />
     <MESSAGE value="make it not default to capitalize" />
@@ -453,17 +468,8 @@
     <MESSAGE value="fix too many inputs in create" />
     <MESSAGE value="fix share url" />
     <MESSAGE value="fix spell layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix spell layout" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seb/Mysql.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fix wait_timeout sql error kicking my ass" />
+    <MESSAGE value="remove unneccessary print" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unneccessary print" />
   </component>
 </project>

@@ -129,7 +129,8 @@ public class Mysql {
 
     public static String getCharacterOwner(String characterId) throws SQLException {
         checkCon();
-        ResultSet rs = con.prepareStatement("SELECT owner FROM characters WHERE id = '" + escapeWildcardsForMySQL(characterId) + "';").executeQuery();
+        String statement = "SELECT owner FROM characters WHERE id = '" + escapeWildcardsForMySQL(characterId) + "';";
+        ResultSet rs = con.prepareStatement(statement).executeQuery();
         rs.next();
         return rs.getString(1);
     }
