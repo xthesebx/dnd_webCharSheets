@@ -9,10 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="fix share url">
+    <list default="true" id="a29c1302-a2e5-4820-8d4e-5d6041fdece4" name="Changes" comment="fix spell layout">
+      <change afterPath="$PROJECT_DIR$/html/shareView.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Login/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/character/CharView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/defaultView.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/defaultView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/Mysql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/ViewShare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seb/basicSite/ViewShare.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,39 +59,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.pdf.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sebas/IdeaProjects/Recipes/dndWeb/src/main/java/com/seb/spellsAndWeapons&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.24942529&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Debug",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.pdf.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/sebas/IdeaProjects/Recipes/dndWeb/html",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.24942529",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\html" />
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\src\main\java\com\seb\spellsAndWeapons" />
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb" />
-      <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\html" />
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\md" />
       <recent name="C:\Users\sebas\IdeaProjects\Recipes\dndWeb\src\main\java\com\seb" />
     </key>
@@ -153,7 +155,8 @@
       <workItem from="1736947838426" duration="20000" />
       <workItem from="1737124156175" duration="2249000" />
       <workItem from="1737317838429" duration="18408000" />
-      <workItem from="1737367871320" duration="18374000" />
+      <workItem from="1737367871320" duration="21312000" />
+      <workItem from="1737901174849" duration="949000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -387,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737385615616</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix spell layout">
+      <option name="closed" value="true" />
+      <created>1737386402677</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1737386402677</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rebuild in java17" />
     <MESSAGE value="change port" />
     <MESSAGE value="can now add weapons and spells and more" />
     <MESSAGE value="fix ide" />
@@ -442,6 +452,18 @@
     <MESSAGE value="make timeout longer" />
     <MESSAGE value="fix too many inputs in create" />
     <MESSAGE value="fix share url" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix share url" />
+    <MESSAGE value="fix spell layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix spell layout" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/seb/Mysql.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

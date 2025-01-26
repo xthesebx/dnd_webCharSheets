@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class ViewShare extends JavalinPage {
     public ViewShare(Context ctx) throws SQLException {
         super(ctx);
-        String html = FileUtil.readFile("html/defaultView.html");
+        String html = FileUtil.readFile("html/shareView.html");
 
         int str = 0, ges = 0, inte = 0, kon = 0, weis = 0, cha = 0, übungsbonus = 2;
         boolean[] retÜbung = new boolean[6];

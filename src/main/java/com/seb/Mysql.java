@@ -24,6 +24,7 @@ public class Mysql {
 
     private static Connection con;
     private static JSONObject data;
+    private static long timestamp;
 
     static {
         try {
@@ -37,6 +38,8 @@ public class Mysql {
         String password = data.getString("password");
         String username = data.getString("username");
         con = DriverManager.getConnection("jdbc:mariadb://sebgameservers.de:3306/dnd", username, password);
+        timestamp = System.currentTimeMillis() + 28800000;
+        Logger.error(timestamp);
     }
 
     public static ResultSet charDetails(String id) throws SQLException {
@@ -47,7 +50,8 @@ public class Mysql {
 
     public static LoginStatus login(String username, String password) throws SQLException {
         checkCon();
-        ResultSet rs = con.prepareStatement("SELECT count(*) FROM users WHERE username = '" + escapeWildcardsForMySQL(username) + "' AND password = '" + escapeWildcardsForMySQL(password) + "';").executeQuery();
+        String statement = "SELECT count(*) FROM users WHERE username = '" + escapeWildcardsForMySQL(username) + "' AND password = '" + escapeWildcardsForMySQL(password) + "';";
+        ResultSet rs = con.prepareStatement(statement).executeQuery();
         rs.next();
         int i = rs.getInt(1);
         if (i == 1) return LoginStatus.SUCCESS;
@@ -132,7 +136,7 @@ public class Mysql {
     }
 
     private static void checkCon() throws SQLException {
-        if (con == null || con.isClosed()) createMysql();
+        if (con == null || con.isClosed() || timestamp < System.currentTimeMillis()) createMysql();
     }
 
     public static ResultSet getWeapons() throws SQLException {
