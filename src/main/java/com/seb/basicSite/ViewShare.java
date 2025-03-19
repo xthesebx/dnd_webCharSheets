@@ -6,7 +6,6 @@ import io.javalin.http.Context;
 import io.javalin.util.FileUtil;
 import org.apache.commons.text.StringEscapeUtils;
 
-import java.io.File;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -29,10 +28,12 @@ public class ViewShare extends JavalinPage {
         for (int i = 1; i <= rsmd.getColumnCount(); i++) {
             if (rsmd.getColumnName(i).equals("story")) {
                 if (rs.getString(i) == null) {
-
                     html = html.replaceFirst("\\$STORY", "");
-                } else
-                    html = html.replaceFirst("\\$STORY", StringEscapeUtils.unescapeHtml4(rs.getString(i)));
+                } else {
+                    String story = StringEscapeUtils.unescapeHtml4(rs.getString(i));
+                    story = Mysql.unescape(story);
+                    html = html.replaceFirst("\\$STORY", story);
+                }
                 continue;
             }
             if (rsmd.getColumnName(i).equals("übungsbonus")) {

@@ -250,7 +250,7 @@ public class CharView extends JavalinAuthPage {
                 if (rs.getString(i) == null) {
                     html = html.replaceFirst("\\$STORY", "");
                 } else
-                    html = html.replaceFirst("\\$STORY", StringEscapeUtils.unescapeHtml4(rs.getString(i)));
+                    html = html.replaceFirst("\\$STORY", Mysql.unescape(StringEscapeUtils.unescapeHtml4(rs.getString(i))));
                 continue;
             }
             if (rsmd.getColumnName(i).equals("id")) continue;

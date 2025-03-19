@@ -332,6 +332,21 @@ public class Mysql {
                 .replace("_","\\_");
     }
 
+    public static String unescape(String s) {
+        return s.replace("\\\\", "\\")
+                .replace("\\b","\b")
+                .replace("\\n","\n")
+                .replace("\\r", "\r")
+                .replace("\\t", "\t")
+                .replace("\\Z", new String(Character.toChars(26)))
+                .replace("\\0", new String(Character.toChars(0)))
+                .replace("\\'", "'")
+                .replace("\\\"", "\"")
+                .replace("\\%", "%")
+                .replace("\\_","_")
+                .replace("&nbsp;", " ");
+    }
+
     public static void addShare(String charId) throws SQLException {
         checkCon();
         if (charHasShare(charId)) {
