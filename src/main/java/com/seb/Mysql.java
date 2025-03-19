@@ -342,7 +342,7 @@ public class Mysql {
                 .replace("\\0", new String(Character.toChars(0)))
                 .replace("\\'", "'")
                 .replace("\\\"", "\"")
-                .replace("\\%", "%")
+                .replace("\\\\%", "%")
                 .replace("\\_","_")
                 .replace("&nbsp;", " ");
     }
