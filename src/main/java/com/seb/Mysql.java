@@ -327,6 +327,8 @@ public class Mysql {
     }
 
     private static String escapeWildcardsForMySQL(String s) {
+        if (s.contains("<p>"))
+            s = s.replace("<p>", "").replace("</p>", " ");
         return escapeStringForMySQL(s)
                 .replace("%", "\\%")
                 .replace("_","\\_");
