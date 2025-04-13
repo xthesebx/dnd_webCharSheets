@@ -47,7 +47,7 @@ public class CharacterEdit extends JavalinAuthPage {
                 continue;
             }
             if (charMeta.getColumnName(i).equals("story")) {
-                html = html.replace("$STORY", StringEscapeUtils.unescapeHtml4(value));
+                html = html.replace("$STORY", Mysql.unescape(StringEscapeUtils.unescapeHtml4(value)));
                 continue;
             }
 
