@@ -6,6 +6,7 @@ import com.seb.abs.JavalinAuthPage;
 import io.javalin.http.Context;
 import io.javalin.util.FileUtil;
 import org.apache.commons.text.StringEscapeUtils;
+import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
@@ -110,38 +111,59 @@ public class CharView extends JavalinAuthPage {
             html = html.replaceFirst("\\$" + rsmd.getColumnName(i).toUpperCase(), rs.getString(i));
             switch (rsmd.getColumnName(i)) {
                 case "str": {
-                    str = (int) Math.floor(((rs.getInt(i) - 10) / 2));
+                    str = (int) Math.floor(((double) (rs.getInt(i) - 10) / 2));
                     html = html.replaceFirst("\\$STRM", String.valueOf(str));
 
                     break;
                 }
                 case "ges": {
-                    ges = (int) Math.floor(((rs.getInt(i) - 10) / 2));
+                    ges = (int) Math.floor(((double) (rs.getInt(i) - 10) / 2));
                     html = html.replaceFirst("\\$GESM", String.valueOf(ges));
                     break;
                 }
                 case "intelligenz": {
-                    inte = (int) Math.floor(((rs.getInt(i) - 10) / 2));
+                    inte = (int) Math.floor(((double) (rs.getInt(i) - 10) / 2));
                     html = html.replaceFirst("\\$INTM", String.valueOf(inte));
                     break;
                 }
                 case "kon": {
-                    kon = (int) Math.floor(((rs.getInt(i) - 10) / 2));
+                    kon = (int) Math.floor(((double) (rs.getInt(i) - 10) / 2));
                     html = html.replaceFirst("\\$KONM", String.valueOf(kon));
                     break;
                 }
                 case "weis": {
-                    weis = (int) Math.floor(((rs.getInt(i) - 10) / 2));
+                    weis = (int) Math.floor(((double) (rs.getInt(i) - 10) / 2));
                     html = html.replaceFirst("\\$WEISM", String.valueOf(weis));
                     break;
                 }
                 case "cha": {
-                    cha = (int) Math.floor(((rs.getInt(i) - 10) / 2));
+                    cha = (int) Math.floor(((double) (rs.getInt(i) - 10) / 2));
                     html = html.replaceFirst("\\$CHAM", String.valueOf(cha));
                     break;
                 }
             }
         }
+        html = getString(html, str, ges, inte, kon, weis, cha, übungsbonus, retÜbung, skillÜbung, charClass, classAttribute);
+        if (!Mysql.getCharHasSpells(id)) html = html.replace(" id=\"spellTable\"", " id=\"spellTable\" style=\"display: none\"");
+        else {
+            for (int i = 0; i < 10; i++) {
+                if (Mysql.getCharHasSpellLevel(id, String.valueOf(i))) {
+                    html = html.replaceFirst("spell" + i + "\" style=\"display: none\"", "spell" + i + "\"");
+                    ResultSet resultSet = Mysql.getCharSpells(id, String.valueOf(i));
+                    StringBuilder spells = new StringBuilder();
+                    while (resultSet.next()) {
+                        spells.append("<div class=\"row\"><div class=\"col\">" + resultSet.getString("name") + "</div></div>");
+                    }
+                    html = html.replace("$SPELLLIST" + i, spells.toString());
+                }
+
+            }
+        }
+        return html;
+    }
+
+    @NotNull
+    private String getString(String html, int str, int ges, int inte, int kon, int weis, int cha, int übungsbonus, boolean[] retÜbung, boolean[] skillÜbung, String charClass, String classAttribute) throws SQLException {
         if (!charClass.isEmpty()) classAttribute = Mysql.getClassSpellAttribute(charClass);
         ResultSet weapons = Mysql.getCharWeapons(id);
         StringBuilder waffen = new StringBuilder();
@@ -205,24 +227,9 @@ public class CharView extends JavalinAuthPage {
                 break;
             }
         }
-        if (!Mysql.getCharHasSpells(id)) html = html.replace(" id=\"spellTable\"", " id=\"spellTable\" style=\"display: none\"");
-        else {
-            for (int i = 0; i < 10; i++) {
-                if (Mysql.getCharHasSpellLevel(id, String.valueOf(i))) {
-                    html = html.replaceFirst("spell" + i + "\" style=\"display: none\"", "spell" + i + "\"");
-                    ResultSet resultSet = Mysql.getCharSpells(id, String.valueOf(i));
-                    StringBuilder spells = new StringBuilder();
-                    while (resultSet.next()) {
-                        spells.append("<div class=\"row\"><div class=\"col\">" + resultSet.getString("name") + "</div></div>");
-                    }
-                    html = html.replace("$SPELLLIST" + i, spells.toString());
-                }
-
-            }
-        }
         return html;
     }
-    
+
     private String secondDiv(String html) throws SQLException {
         int str = 0, ges = 0, inte = 0, kon = 0, weis = 0, cha = 0, übungsbonus = 2;
         boolean[] retÜbung = new boolean[6];
@@ -308,69 +315,8 @@ public class CharView extends JavalinAuthPage {
                 }
             }
         }
-        if (!charClass.isEmpty()) classAttribute = Mysql.getClassSpellAttribute(charClass);
-        ResultSet weapons = Mysql.getCharWeapons(id);
-        StringBuilder waffen = new StringBuilder();
-        while (weapons.next()) {
-            if (weapons.getInt("spell") == 0)
-                waffen.append("<tr><td>" + weapons.getString(1) + "</td><td>" + (weapons.getString(2).equals("1") ? String.valueOf(ges + übungsbonus) : String.valueOf(str + übungsbonus)) + "</td><td>" + weapons.getString(3) + "+" + (weapons.getString(2).equals("1") ? ges : str) + " " + weapons.getString(4) + "</td></tr>");
-            else
-                waffen.append("<tr><td>" + weapons.getString(1) + "</td><td></td><td>" + weapons.getString(3) + " " + weapons.getString(4) + "</td></tr>");
-        }
-        html = html.replace("$STRRET", retÜbung[0] ? String.valueOf(str + übungsbonus) : String.valueOf(str))
-                .replace("$GESRET", retÜbung[1] ? String.valueOf(ges + übungsbonus) : String.valueOf(ges))
-                .replace("$KONRET", retÜbung[2] ? String.valueOf(kon + übungsbonus) : String.valueOf(kon))
-                .replace("$INTRET", retÜbung[3] ? String.valueOf(inte + übungsbonus) : String.valueOf(inte))
-                .replace("$WEISRET", retÜbung[4] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
-                .replace("$CHARET", retÜbung[5] ? String.valueOf(cha + übungsbonus) : String.valueOf(cha))
-                .replace("$AKROBATIK", skillÜbung[0] ? String.valueOf(ges + übungsbonus) : String.valueOf(ges))
-                .replace("$ARKANE", skillÜbung[1] ? String.valueOf(inte + übungsbonus) : String.valueOf(inte))
-                .replace("$ATHLETIK", skillÜbung[2] ? String.valueOf(str + übungsbonus) : String.valueOf(str))
-                .replace("$AUFTRETEN", skillÜbung[3] ? String.valueOf(cha + übungsbonus) : String.valueOf(cha))
-                .replace("$EINSCH", skillÜbung[4] ? String.valueOf(cha + übungsbonus) : String.valueOf(cha))
-                .replace("$FF", skillÜbung[5] ? String.valueOf(ges + übungsbonus) : String.valueOf(ges))
-                .replace("$GESCHICHTE", skillÜbung[6] ? String.valueOf(inte + übungsbonus) : String.valueOf(inte))
-                .replace("$HEIMLICH", skillÜbung[7] ? String.valueOf(ges + übungsbonus) : String.valueOf(ges))
-                .replace("$MEDIZIN", skillÜbung[8] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
-                .replace("$TIERE", skillÜbung[9] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
-                .replace("$MOTIV", skillÜbung[10] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
-                .replace("$NACH", skillÜbung[11] ? String.valueOf(inte + übungsbonus) : String.valueOf(inte))
-                .replace("$NATUR", skillÜbung[12] ? String.valueOf(inte + übungsbonus) : String.valueOf(inte))
-                .replace("$RELI", skillÜbung[13] ? String.valueOf(inte + übungsbonus) : String.valueOf(inte))
-                .replace("$TÄUSCHEN", skillÜbung[14] ? String.valueOf(cha + übungsbonus) : String.valueOf(cha))
-                .replace("$ÜBERZEUGEN", skillÜbung[15] ? String.valueOf(cha + übungsbonus) : String.valueOf(cha))
-                .replace("$WAHRNEHMUNG", skillÜbung[16] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
-                .replace("$ÜBERLEBEN", skillÜbung[0] ? String.valueOf(weis + übungsbonus) : String.valueOf(weis))
-                .replace("$PASSIVE", skillÜbung[16] ? String.valueOf(weis + übungsbonus + 10) : String.valueOf(weis + 10))
-                .replace("$ID", id)
-                .replace("$WAFFEN", waffen.toString())
-                .replace("Erfolge</span>[0]", "Erfolge</span>[0][0][0]")
-                .replace("Fehlschläge</span>[0]", "Fehlschläge</span>[0][0][0]")
-                .replace("Erfolge</span>[1]", "Erfolge</span>[1][0][0]")
-                .replace("Fehlschläge</span>[1]", "Fehlschläge</span>[1][0][0]")
-                .replace("Erfolge</span>[2]", "Erfolge</span>[1][1][0]")
-                .replace("Fehlschläge</span>[2]", "Fehlschläge</span>[1][1][0]")
-                .replace("Erfolge</span>[3]", "Erfolge</span>[1][1][1]")
-                .replace("Fehlschläge</span>[3]", "Fehlschläge</span>[1][1][1]")
-                .replace("[0]", "<input type=\"checkbox\" disabled/>")
-                .replace("[1]", "<input type=\"checkbox\" disabled checked/>")
-                //.replaceFirst("\\$CLASS", charClass)
-                .replaceFirst("\\$CLASSSPELL", classAttribute)
-        ;
-        switch (classAttribute) {
-            case "char" : {
-                html = html.replaceFirst("\\$SPELLSAVE", String.valueOf(cha + übungsbonus + 8)).replaceFirst("\\$SPELLBONUS", String.valueOf(cha + übungsbonus));
-                break;
-            }
-            case "weis" : {
-                html = html.replaceFirst("\\$SPELLSAVE", String.valueOf(weis + übungsbonus + 8)).replaceFirst("\\$SPELLBONUS", String.valueOf(weis + übungsbonus));
-                break;
-            }
-            case "inte" : {
-                html = html.replaceFirst("\\$SPELLSAVE", String.valueOf(inte + übungsbonus + 8)).replaceFirst("\\$SPELLBONUS", String.valueOf(inte + übungsbonus));
-                break;
-            }
-        }
+        html = getString(html, str, ges, inte, kon, weis, cha, übungsbonus, retÜbung, skillÜbung, charClass, classAttribute);
+        ResultSet weapons;
         ResultSet charDetails = Mysql.charDetails(id);
         ResultSetMetaData charMeta = charDetails.getMetaData();
         charDetails.next();
